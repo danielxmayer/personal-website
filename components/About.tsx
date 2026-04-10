@@ -1,39 +1,47 @@
 const skills = [
-  'TypeScript', 'JavaScript', 'React', 'Next.js',
-  'Node.js', 'Python', 'Tailwind CSS', 'PostgreSQL',
-  'Git', 'Docker', 'REST APIs', 'GraphQL',
+  'Mediální strategie',
+  'Plánování a nákup médií',
+  'Vyjednávání',
+  'Výzkum trhu',
+  'Online marketing',
+  'TV / Digital / OOH',
+  'Výkonová optimalizace',
+  'Řízení rozpočtu',
+  'Procurement',
+  'Analytika & reporting',
+  'Brand management',
+  'Angličtina · Němčina',
 ]
 
 export default function About() {
   return (
     <section id="about" className="py-24 bg-white">
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-4xl font-extrabold text-slate-900 mb-2">About Me</h2>
+        <h2 className="text-4xl font-extrabold text-slate-900 mb-2">O mně</h2>
         <div className="w-16 h-1 bg-indigo-600 mb-10 rounded-full" />
 
         <div className="grid md:grid-cols-2 gap-16 items-start">
           {/* Bio */}
           <div>
             <p className="text-slate-700 text-lg leading-relaxed mb-6">
-              I&apos;m Daniel Mayer, a passionate software developer based in Czech Republic. I love
-              turning ideas into real products — whether that&apos;s a sleek web app, a robust API,
-              or a smooth user interface.
+              Jsem Daniel Mayer, marketingový a mediální manažer s&nbsp;více než deseti lety praxe
+              v&nbsp;řízení marketingových investic, rozpočtů a&nbsp;mediálních strategií napříč
+              TV, digitálními a&nbsp;OOH kanály.
             </p>
             <p className="text-slate-700 text-lg leading-relaxed mb-6">
-              I focus on writing clean, maintainable code and always aim to deliver the best
-              possible experience to end users. Outside of work, I enjoy exploring new technologies,
-              contributing to open-source, and staying up-to-date with the latest trends in the
-              industry.
+              Zaměřuji se na výkonovou optimalizaci kampaní a&nbsp;dlouhodobé budování značek.
+              Mám zkušenosti z&nbsp;pozic ve velkých mediálních domech a&nbsp;brandech jako
+              TV&nbsp;Nova, Zonky nebo MAFRA.
             </p>
             <p className="text-slate-700 text-lg leading-relaxed">
-              When I&apos;m not coding, you can find me hiking, reading, or experimenting with new
-              side projects.
+              Mimo práci sportuju, cestuji a&nbsp;rád poznávám nové kultury a&nbsp;lidi z&nbsp;různých
+              prostředí — to mi pomáhá udržovat flexibilitu a&nbsp;vytrvalost.
             </p>
           </div>
 
           {/* Skills */}
           <div>
-            <h3 className="text-xl font-bold text-slate-900 mb-6">Skills &amp; Technologies</h3>
+            <h3 className="text-xl font-bold text-slate-900 mb-6">Dovednosti</h3>
             <div className="flex flex-wrap gap-3">
               {skills.map((skill) => (
                 <span
@@ -47,12 +55,12 @@ export default function About() {
 
             <div className="mt-10 grid grid-cols-2 gap-6">
               <div className="p-5 bg-slate-50 rounded-xl border border-slate-100">
-                <p className="text-2xl font-bold text-indigo-600 mb-1">Frontend</p>
-                <p className="text-slate-600 text-sm">React, Next.js, Tailwind CSS, TypeScript</p>
+                <p className="text-2xl font-bold text-indigo-600 mb-1">Strategie</p>
+                <p className="text-slate-600 text-sm">Mediální plánování, brand building, performance marketing</p>
               </div>
               <div className="p-5 bg-slate-50 rounded-xl border border-slate-100">
-                <p className="text-2xl font-bold text-indigo-600 mb-1">Backend</p>
-                <p className="text-slate-600 text-sm">Node.js, Python, REST APIs, PostgreSQL</p>
+                <p className="text-2xl font-bold text-indigo-600 mb-1">Řízení</p>
+                <p className="text-slate-600 text-sm">Rozpočty, procurement, týmové vedení, reporting</p>
               </div>
             </div>
           </div>
