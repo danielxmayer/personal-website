@@ -1,12 +1,12 @@
 'use client'
 
-type Props = {
-  setActiveSection: (section: string) => void
-}
+export default function Hero() {
+  function scrollTo(id: string) {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+  }
 
-export default function Hero({ setActiveSection }: Props) {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900 pt-16">
+    <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900 pt-16">
       <div className="max-w-6xl mx-auto px-6 text-center">
         <p className="text-indigo-400 text-sm font-semibold tracking-widest uppercase mb-4">
           Welcome to my portfolio
@@ -22,13 +22,13 @@ export default function Hero({ setActiveSection }: Props) {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button
-            onClick={() => setActiveSection('projects')}
+            onClick={() => scrollTo('projects')}
             className="px-8 py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-lg transition-colors"
           >
             View My Work
           </button>
           <button
-            onClick={() => setActiveSection('contact')}
+            onClick={() => scrollTo('contact')}
             className="px-8 py-3 border border-slate-500 hover:border-indigo-400 text-slate-300 hover:text-white font-semibold rounded-lg transition-colors"
           >
             Get in Touch
