@@ -40,7 +40,7 @@ export default function Home() {
       <main>
         {/* Photo background covers only Hero + About */}
         <div className="relative">
-          <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-full max-w-7xl -z-10 px-6">
+          <div className="absolute inset-y-0 inset-x-0 -z-10">
             <div className="relative h-full">
               <Image
                 src="/daniel.jpg"
