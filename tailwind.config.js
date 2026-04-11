@@ -13,6 +13,11 @@ module.exports = {
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
+        'bebas': ['"Bebas Neue"', 'sans-serif'],
+        'playfair': ['"Playfair Display"', 'serif'],
+        'space': ['"Space Grotesk"', 'sans-serif'],
+        'cormorant': ['"Cormorant Garamond"', 'serif'],
+        'dm-serif': ['"DM Serif Display"', 'serif'],
       },
     },
   },
