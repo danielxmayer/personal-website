@@ -1,1 +1,27 @@
-{"name":"personal-website","version":"1.0.0","private":true,"scripts":{"dev":"next dev","build":"next build","start":"next start"},"dependencies":{"@tailwindcss/postcss":"^4.2.2","next":"latest","react":"latest","react-dom":"latest","tailwindcss":"latest"},"devDependencies":{"@types/node":"^25.6.0","@types/react":"^19.2.14","autoprefixer":"latest","postcss":"latest","typescript":"^6.0.2"}}
+{
+  "name": "personal-website",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint . --ext .ts,.tsx,.js,.jsx"
+  },
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.2.2",
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "tailwindcss": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "^25.6.0",
+    "@types/react": "^19.2.14",
+    "autoprefixer": "latest",
+    "eslint": "^9.39.4",
+    "eslint-config-next": "^16.2.3",
+    "postcss": "latest",
+    "typescript": "^6.0.2"
+  }
+}
