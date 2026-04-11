@@ -51,9 +51,6 @@ export default function Projects() {
             <h2 className="text-3xl font-bold text-gray-900 leading-tight">Vybrané<br />projekty</h2>
           </div>
           <div className="md:col-span-8">
-            <p className="text-gray-500 text-lg leading-relaxed">
-              Výběr klíčových kampaní a projektů z mé kariéry v oblasti marketingu a médií.
-            </p>
           </div>
         </div>
 
