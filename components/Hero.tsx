@@ -6,7 +6,7 @@ export default function Hero() {
         <div className="border-t border-gray-200 pt-16 pb-8">
           <h1 className="font-playfair font-black leading-none text-6xl md:text-8xl lg:text-9xl mb-10">
             <span className="block text-outline">Daniel</span>
-            <span className="block text-right text-outline">Mayer</span>
+            <span className="block text-outline">Mayer</span>
           </h1>
 
           <p className="text-sm text-gray-400 tracking-widest uppercase font-medium">
