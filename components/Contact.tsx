@@ -17,116 +17,101 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-24 bg-slate-50">
-      <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-4xl font-extrabold text-slate-900 mb-2">Kontakt</h2>
-        <div className="w-16 h-1 bg-indigo-600 mb-10 rounded-full" />
-
-        <div className="grid md:grid-cols-2 gap-16 items-start">
-          {/* Info */}
-          <div>
-            <p className="text-slate-700 text-lg leading-relaxed mb-8">
-              Máte zájem o spolupráci nebo chcete probrat mediální projekt? Neváhejte mě kontaktovat!
+    <section id="contact" className="py-24 bg-gray-50 border-t border-gray-100">
+      <div className="max-w-5xl mx-auto px-6">
+        <div className="grid md:grid-cols-12 gap-16">
+          <div className="md:col-span-4">
+            <p className="text-xs text-gray-400 tracking-widest uppercase mb-4 font-medium">Kontakt</p>
+            <h2 className="text-3xl font-bold text-gray-900 leading-tight mb-8">
+              Pojďme<br />spolupracovat.
+            </h2>
+            <p className="text-gray-500 text-base leading-relaxed mb-8">
+              Máte zájem o spolupráci nebo chcete probrat mediální projekt? Neváhejte mě kontaktovat.
             </p>
-            <div className="space-y-4">
-              <div className="flex items-center gap-3 text-slate-700">
-                <span className="w-10 h-10 flex items-center justify-center bg-indigo-100 text-indigo-600 rounded-full text-lg">
-                  ✉
-                </span>
-                <a href="mailto:daniel.mayer@seznam.cz" className="hover:text-indigo-600 transition-colors">
-                  daniel.mayer@seznam.cz
-                </a>
-              </div>
-              <div className="flex items-center gap-3 text-slate-700">
-                <span className="w-10 h-10 flex items-center justify-center bg-indigo-100 text-indigo-600 rounded-full text-lg">
-                  🔗
-                </span>
-                <a
-                  href="https://github.com/danielxmayer"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-indigo-600 transition-colors"
-                >
-                  github.com/danielxmayer
-                </a>
-              </div>
-              <div className="flex items-center gap-3 text-slate-700">
-                <span className="w-10 h-10 flex items-center justify-center bg-indigo-100 text-indigo-600 rounded-full text-lg">
-                  💼
-                </span>
-                <a
-                  href="https://www.linkedin.com/in/dama"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-indigo-600 transition-colors"
-                >
-                  linkedin.com/in/dama
-                </a>
-              </div>
+            <div className="space-y-3">
+              <a
+                href="mailto:daniel.mayer@seznam.cz"
+                className="flex items-center gap-3 text-sm text-gray-500 hover:text-gray-900 transition-colors"
+              >
+                <span className="w-8 h-8 flex items-center justify-center bg-white border border-gray-200 rounded-full text-xs">✉</span>
+                daniel.mayer@seznam.cz
+              </a>
+              <a
+                href="https://www.linkedin.com/in/dama"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 text-sm text-gray-500 hover:text-gray-900 transition-colors"
+              >
+                <span className="w-8 h-8 flex items-center justify-center bg-white border border-gray-200 rounded-full text-xs">💼</span>
+                linkedin.com/in/dama
+              </a>
             </div>
           </div>
 
-          {/* Form */}
-          {submitted ? (
-              <div className="bg-green-50 border border-green-200 text-green-800 rounded-xl p-8 text-center">
-              <p className="text-2xl font-bold mb-2">Zpráva odeslána! 🎉</p>
-              <p className="text-green-700">Ozvu se vám co nejdříve.</p>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="space-y-5">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-1">
-                  Jméno
-                </label>
-                <input
-                  id="name"
-                  name="name"
-                  type="text"
-                  required
-                  value={form.name}
-                  onChange={handleChange}
-                  placeholder="Vaše jméno"
-                  className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent transition text-slate-800 bg-white"
-                />
+          <div className="md:col-span-8">
+            {submitted ? (
+              <div className="bg-white border border-gray-100 rounded-2xl p-10 text-center">
+                <p className="text-xl font-bold text-gray-900 mb-2">Zpráva odeslána!</p>
+                <p className="text-gray-500">Ozvu se vám co nejdříve.</p>
               </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">
-                  Email
-                </label>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  required
-                  value={form.email}
-                  onChange={handleChange}
-                  placeholder="your@email.com"
-                  className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent transition text-slate-800 bg-white"
-                />
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-1">
-                  Zpráva
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={5}
-                  required
-                  value={form.message}
-                  onChange={handleChange}
-                  placeholder="Napište mi o vašem projektu nebo záměru..."
-                  className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent transition text-slate-800 bg-white resize-none"
-                />
-              </div>
-              <button
-                type="submit"
-                className="w-full py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-lg transition-colors"
-              >
-                Odeslat zprávu
-              </button>
-            </form>
-          )}
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-5 bg-white rounded-2xl border border-gray-100 p-8">
+                <div className="grid sm:grid-cols-2 gap-5">
+                  <div>
+                    <label htmlFor="name" className="block text-xs text-gray-400 font-medium mb-2 uppercase tracking-widest">
+                      Jméno
+                    </label>
+                    <input
+                      id="name"
+                      name="name"
+                      type="text"
+                      required
+                      value={form.name}
+                      onChange={handleChange}
+                      placeholder="Vaše jméno"
+                      className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition text-gray-900 bg-white text-sm"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="email" className="block text-xs text-gray-400 font-medium mb-2 uppercase tracking-widest">
+                      Email
+                    </label>
+                    <input
+                      id="email"
+                      name="email"
+                      type="email"
+                      required
+                      value={form.email}
+                      onChange={handleChange}
+                      placeholder="your@email.com"
+                      className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition text-gray-900 bg-white text-sm"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label htmlFor="message" className="block text-xs text-gray-400 font-medium mb-2 uppercase tracking-widest">
+                    Zpráva
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows={5}
+                    required
+                    value={form.message}
+                    onChange={handleChange}
+                    placeholder="Napište mi o vašem projektu nebo záměru..."
+                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition text-gray-900 bg-white resize-none text-sm"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="px-6 py-3 bg-gray-900 hover:bg-gray-700 text-white text-sm font-medium rounded-full transition-colors"
+                >
+                  Odeslat zprávu →
+                </button>
+              </form>
+            )}
+          </div>
         </div>
       </div>
     </section>

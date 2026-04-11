@@ -68,68 +68,72 @@ const achievements = [
 
 export default function Resume() {
   return (
-    <section id="resume" className="py-24 bg-slate-50">
-      <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-4xl font-extrabold text-slate-900 mb-2">Životopis</h2>
-        <div className="w-16 h-1 bg-indigo-600 mb-10 rounded-full" />
-
-        <div className="grid md:grid-cols-2 gap-16">
-          {/* Experience */}
-          <div>
-            <h3 className="text-xl font-bold text-slate-900 mb-6">Pracovní zkušenosti</h3>
-            <div className="space-y-8">
-              {experience.map((item) => (
-                <div key={item.role + item.company} className="relative pl-6 border-l-2 border-indigo-200">
-                  <div className="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-indigo-600 border-2 border-white" />
-                  <p className="text-xs text-indigo-600 font-semibold tracking-wide uppercase mb-1">
-                    {item.period}
-                  </p>
-                  <h4 className="text-lg font-bold text-slate-900">{item.role}</h4>
-                  <p className="text-slate-500 text-sm mb-2">{item.company}</p>
-                  <p className="text-slate-600 text-sm leading-relaxed">{item.description}</p>
-                </div>
-              ))}
-            </div>
+    <section id="resume" className="py-24 bg-gray-50 border-t border-gray-100">
+      <div className="max-w-5xl mx-auto px-6">
+        <div className="grid md:grid-cols-12 gap-16 mb-20">
+          <div className="md:col-span-4">
+            <p className="text-xs text-gray-400 tracking-widest uppercase mb-4 font-medium">Kariéra</p>
+            <h2 className="text-3xl font-bold text-gray-900 leading-tight">Pracovní<br />zkušenosti</h2>
           </div>
-
-          {/* Education + Achievements + Download */}
-          <div>
-            <h3 className="text-xl font-bold text-slate-900 mb-6">Vzdělání</h3>
-            <div className="space-y-8 mb-12">
-              {education.map((item) => (
-                <div key={item.degree} className="relative pl-6 border-l-2 border-indigo-200">
-                  <div className="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-indigo-600 border-2 border-white" />
-                  <p className="text-xs text-indigo-600 font-semibold tracking-wide uppercase mb-1">
-                    {item.period}
-                  </p>
-                  <h4 className="text-lg font-bold text-slate-900">{item.degree}</h4>
-                  <p className="text-slate-500 text-sm mb-2">{item.school}</p>
-                  <p className="text-slate-600 text-sm leading-relaxed">{item.description}</p>
+          <div className="md:col-span-8 space-y-10">
+            {experience.map((item) => (
+              <div key={item.role + item.company} className="flex gap-6">
+                <div className="pt-1 shrink-0">
+                  <div className="w-2 h-2 rounded-full bg-gray-300 mt-1.5" />
                 </div>
-              ))}
-            </div>
+                <div>
+                  <p className="text-xs text-gray-400 font-medium mb-1">{item.period}</p>
+                  <h4 className="text-base font-semibold text-gray-900">{item.role}</h4>
+                  <p className="text-sm text-blue-600 mb-2">{item.company}</p>
+                  <p className="text-sm text-gray-500 leading-relaxed">{item.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
 
-            {/* Key Achievements */}
-            <h3 className="text-xl font-bold text-slate-900 mb-6">Klíčové výsledky</h3>
-            <div className="space-y-4 mb-12">
+        <div className="grid md:grid-cols-12 gap-16 mb-20 border-t border-gray-200 pt-20">
+          <div className="md:col-span-4">
+            <p className="text-xs text-gray-400 tracking-widest uppercase mb-4 font-medium">Vzdělání</p>
+            <h2 className="text-3xl font-bold text-gray-900 leading-tight">Studium</h2>
+          </div>
+          <div className="md:col-span-8 space-y-10">
+            {education.map((item) => (
+              <div key={item.degree} className="flex gap-6">
+                <div className="pt-1 shrink-0">
+                  <div className="w-2 h-2 rounded-full bg-gray-300 mt-1.5" />
+                </div>
+                <div>
+                  <p className="text-xs text-gray-400 font-medium mb-1">{item.period}</p>
+                  <h4 className="text-base font-semibold text-gray-900">{item.degree}</h4>
+                  <p className="text-sm text-blue-600 mb-2">{item.school}</p>
+                  <p className="text-sm text-gray-500 leading-relaxed">{item.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="grid md:grid-cols-12 gap-16 border-t border-gray-200 pt-20">
+          <div className="md:col-span-4">
+            <p className="text-xs text-gray-400 tracking-widest uppercase mb-4 font-medium">Výsledky</p>
+            <h2 className="text-3xl font-bold text-gray-900 leading-tight">Klíčové<br />úspěchy</h2>
+          </div>
+          <div className="md:col-span-8">
+            <div className="grid sm:grid-cols-3 gap-6 mb-10">
               {achievements.map((item) => (
-                <div key={item.title} className="p-4 bg-white rounded-xl border border-slate-100 shadow-sm">
-                  <p className="text-base font-bold text-indigo-600 mb-1">{item.title}</p>
-                  <p className="text-slate-600 text-sm leading-relaxed">{item.description}</p>
+                <div key={item.title} className="bg-white rounded-xl p-5 border border-gray-100">
+                  <p className="text-sm font-semibold text-gray-900 mb-2">{item.title}</p>
+                  <p className="text-sm text-gray-500 leading-relaxed">{item.description}</p>
                 </div>
               ))}
             </div>
-
-            {/* Download CV */}
-            <div className="p-6 bg-indigo-50 rounded-xl border border-indigo-100">
-              <p className="text-slate-700 font-medium mb-4">Chcete celý přehled?</p>
-              <a
-                href="#"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-lg transition-colors text-sm"
-              >
-                Stáhnout CV (PDF)
-              </a>
-            </div>
+            <a
+              href="#"
+              className="inline-flex items-center gap-2 px-5 py-2.5 border border-gray-300 hover:border-gray-900 hover:text-gray-900 text-gray-500 text-sm font-medium rounded-full transition-colors"
+            >
+              Stáhnout CV (PDF) ↓
+            </a>
           </div>
         </div>
       </div>
