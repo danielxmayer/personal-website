@@ -43,7 +43,7 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 bg-white border-t border-gray-100">
+    <section id="projects" className="py-24 border-t border-gray-200">
       <div className="max-w-5xl mx-auto px-6">
         <div className="grid md:grid-cols-12 gap-16 mb-16">
           <div className="md:col-span-4">
@@ -62,7 +62,7 @@ export default function Projects() {
             <div
               key={project.title}
               className={`grid md:grid-cols-12 gap-6 p-7 ${
-                i % 2 === 0 ? 'bg-white' : 'bg-gray-50'
+                i % 2 === 0 ? 'bg-white/60' : 'bg-gray-50/60'
               }`}
             >
               <div className="md:col-span-4">

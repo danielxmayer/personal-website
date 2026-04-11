@@ -1,35 +1,14 @@
 'use client'
 
-import Image from 'next/image'
-
 export default function Hero() {
   function scrollTo(id: string) {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
   }
 
   return (
-    <section id="home" className="relative min-h-screen flex flex-col justify-center pt-16 overflow-hidden bg-white">
-      {/* Background photo */}
-      <Image
-        src="/daniel.jpg"
-        alt="Daniel Mayer"
-        fill
-        priority
-        className="object-cover object-center"
-        style={{ zIndex: 0 }}
-      />
-      {/* Gradient overlay – keeps left side readable */}
-      <div
-        className="absolute inset-0"
-        style={{
-          background:
-            'linear-gradient(to right, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.75) 55%, rgba(255,255,255,0.15) 100%)',
-          zIndex: 1,
-        }}
-      />
-
+    <section id="home" className="relative min-h-screen flex flex-col justify-center pt-16">
       {/* Content */}
-      <div className="relative max-w-5xl mx-auto px-6 w-full" style={{ zIndex: 2 }}>
+      <div className="relative max-w-5xl mx-auto px-6 w-full">
         <div className="border-t border-gray-200 pt-16 pb-8">
           <p className="text-sm text-gray-400 tracking-widest uppercase mb-8 font-medium">
             Marketing &amp; Media Manager

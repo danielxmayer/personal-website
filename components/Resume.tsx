@@ -68,7 +68,7 @@ const achievements = [
 
 export default function Resume() {
   return (
-    <section id="resume" className="py-24 bg-gray-50 border-t border-gray-100">
+    <section id="resume" className="py-24 border-t border-gray-200">
       <div className="max-w-5xl mx-auto px-6">
         <div className="grid md:grid-cols-12 gap-16 mb-20">
           <div className="md:col-span-4">
