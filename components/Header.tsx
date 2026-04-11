@@ -5,10 +5,10 @@ type Props = {
 }
 
 const navLinks = [
-  { id: 'about', label: 'About me' },
-  { id: 'resume', label: 'Track record' },
-  { id: 'projects', label: 'Expertises' },
-  { id: 'testimonials', label: 'Testimonials' },
+  { id: 'about', label: 'O mně' },
+  { id: 'resume', label: 'Zkušenosti' },
+  { id: 'projects', label: 'Expertízy' },
+  { id: 'testimonials', label: 'Reference' },
 ]
 
 function scrollToSection(id: string) {
@@ -35,12 +35,6 @@ export default function Header({ activeSection }: Props) {
             </button>
           ))}
         </nav>
-        <button
-          onClick={() => scrollToSection('contact')}
-          className="px-4 py-2 rounded-full text-sm font-medium bg-gray-900/90 text-white hover:bg-gray-700 transition-colors"
-        >
-          Contact
-        </button>
       </div>
     </header>
   )
