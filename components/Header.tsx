@@ -35,12 +35,17 @@ export default function Header({ activeSection }: Props) {
             </button>
           ))}
         </nav>
-        <button
-          onClick={() => scrollToSection('contact')}
-          className="px-5 py-1.5 rounded-full text-sm font-medium bg-gray-900 text-white hover:bg-gray-700 transition-all shadow-sm"
-        >
-          Kontakt
-        </button>
+        <div className="flex items-center gap-4">
+          <span className="font-playfair font-black text-sm tracking-wide text-gray-900">
+            Daniel Mayer
+          </span>
+          <button
+            onClick={() => scrollToSection('contact')}
+            className="px-5 py-1.5 rounded-full text-sm font-medium bg-gray-900 text-white hover:bg-gray-700 transition-all shadow-sm"
+          >
+            Kontakt
+          </button>
+        </div>
       </div>
     </header>
   )
