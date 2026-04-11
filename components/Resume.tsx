@@ -72,20 +72,23 @@ export default function Resume() {
       <div className="max-w-5xl mx-auto px-8">
         <div className="grid md:grid-cols-12 gap-16 mb-20">
           <div className="md:col-span-4">
-            <p className="text-xs text-gray-400 tracking-widest uppercase mb-4 font-medium">Kariéra</p>
-            <h2 className="text-3xl font-bold text-gray-900 leading-tight">Pracovní<br />zkušenosti</h2>
+            <p className="section-label text-xs text-gray-400 tracking-widest uppercase mb-4 font-medium">Kariéra</p>
+            <h2 className="font-playfair text-3xl font-bold text-gray-900 leading-tight">Pracovní<br />zkušenosti</h2>
           </div>
           <div className="md:col-span-8 space-y-10">
-            {experience.map((item) => (
+            {experience.map((item, i) => (
               <div key={item.role + item.company} className="flex gap-6">
-                <div className="pt-1 shrink-0">
-                  <div className="w-2 h-2 rounded-full bg-gray-300 mt-1.5" />
+                <div className="pt-1 shrink-0 flex flex-col items-center">
+                  <div className={`w-2.5 h-2.5 rounded-full mt-1 ${i === 0 ? 'bg-gray-900' : 'bg-gray-300'}`} />
+                  {i < experience.length - 1 && (
+                    <div className="w-px flex-1 bg-gray-100 mt-2" />
+                  )}
                 </div>
-                <div>
+                <div className="pb-2">
                   <p className="text-xs text-gray-400 font-medium mb-1">{item.period}</p>
                   <h4 className="text-base font-semibold text-gray-900">{item.role}</h4>
-                  <p className="text-sm text-blue-600 mb-2">{item.company}</p>
-                  <p className="text-sm text-gray-500 leading-relaxed">{item.description}</p>
+                  <p className="text-sm text-gray-500 mb-2">{item.company}</p>
+                  <p className="text-sm text-gray-400 leading-relaxed">{item.description}</p>
                 </div>
               </div>
             ))}
@@ -94,20 +97,20 @@ export default function Resume() {
 
         <div className="grid md:grid-cols-12 gap-16 mb-20 border-t border-gray-200 pt-20">
           <div className="md:col-span-4">
-            <p className="text-xs text-gray-400 tracking-widest uppercase mb-4 font-medium">Vzdělání</p>
-            <h2 className="text-3xl font-bold text-gray-900 leading-tight">Studium</h2>
+            <p className="section-label text-xs text-gray-400 tracking-widest uppercase mb-4 font-medium">Vzdělání</p>
+            <h2 className="font-playfair text-3xl font-bold text-gray-900 leading-tight">Studium</h2>
           </div>
           <div className="md:col-span-8 space-y-10">
             {education.map((item) => (
               <div key={item.degree} className="flex gap-6">
                 <div className="pt-1 shrink-0">
-                  <div className="w-2 h-2 rounded-full bg-gray-300 mt-1.5" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-gray-300 mt-1" />
                 </div>
                 <div>
                   <p className="text-xs text-gray-400 font-medium mb-1">{item.period}</p>
                   <h4 className="text-base font-semibold text-gray-900">{item.degree}</h4>
-                  <p className="text-sm text-blue-600 mb-2">{item.school}</p>
-                  <p className="text-sm text-gray-500 leading-relaxed">{item.description}</p>
+                  <p className="text-sm text-gray-500 mb-2">{item.school}</p>
+                  <p className="text-sm text-gray-400 leading-relaxed">{item.description}</p>
                 </div>
               </div>
             ))}
@@ -116,21 +119,21 @@ export default function Resume() {
 
         <div className="grid md:grid-cols-12 gap-16 border-t border-gray-200 pt-20">
           <div className="md:col-span-4">
-            <p className="text-xs text-gray-400 tracking-widest uppercase mb-4 font-medium">Výsledky</p>
-            <h2 className="text-3xl font-bold text-gray-900 leading-tight">Klíčové<br />úspěchy</h2>
+            <p className="section-label text-xs text-gray-400 tracking-widest uppercase mb-4 font-medium">Výsledky</p>
+            <h2 className="font-playfair text-3xl font-bold text-gray-900 leading-tight">Klíčové<br />úspěchy</h2>
           </div>
           <div className="md:col-span-8">
-            <div className="grid sm:grid-cols-3 gap-6 mb-10">
+            <div className="grid sm:grid-cols-3 gap-4 mb-10">
               {achievements.map((item) => (
-                <div key={item.title} className="bg-white rounded-xl p-5 border border-gray-100">
+                <div key={item.title} className="bg-white rounded-2xl p-5 border border-gray-100 hover:border-gray-200 hover:shadow-sm transition-all">
                   <p className="text-sm font-semibold text-gray-900 mb-2">{item.title}</p>
-                  <p className="text-sm text-gray-500 leading-relaxed">{item.description}</p>
+                  <p className="text-sm text-gray-400 leading-relaxed">{item.description}</p>
                 </div>
               ))}
             </div>
             <a
               href="#"
-              className="inline-flex items-center gap-2 px-5 py-2.5 border border-gray-300 hover:border-gray-900 hover:text-gray-900 text-gray-500 text-sm font-medium rounded-full transition-colors"
+              className="inline-flex items-center gap-2 px-5 py-2.5 border border-gray-200 hover:border-gray-900 hover:text-gray-900 text-gray-400 text-sm font-medium rounded-full transition-all"
             >
               Stáhnout CV (PDF) ↓
             </a>

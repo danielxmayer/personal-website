@@ -47,8 +47,8 @@ export default function Projects() {
       <div className="max-w-5xl mx-auto px-8">
         <div className="grid md:grid-cols-12 gap-16 mb-16">
           <div className="md:col-span-4">
-            <p className="text-xs text-gray-400 tracking-widest uppercase mb-4 font-medium">Reference</p>
-            <h2 className="text-3xl font-bold text-gray-900 leading-tight">Vybrané<br />projekty</h2>
+            <p className="section-label text-xs text-gray-400 tracking-widest uppercase mb-4 font-medium">Reference</p>
+            <h2 className="font-playfair text-3xl font-bold text-gray-900 leading-tight">Vybrané<br />projekty</h2>
           </div>
           <div className="md:col-span-8">
           </div>
@@ -58,14 +58,14 @@ export default function Projects() {
           {projects.map((project, i) => (
             <div
               key={project.title}
-              className={`grid md:grid-cols-12 gap-6 p-7 ${
-                i % 2 === 0 ? 'bg-white/60' : 'bg-gray-50/60'
-              }`}
+              className={`group grid md:grid-cols-12 gap-6 p-7 transition-colors ${
+                i % 2 === 0 ? 'bg-white/80' : 'bg-stone-50/80'
+              } hover:bg-white`}
             >
               <div className="md:col-span-4">
                 <p className="text-xs text-gray-400 font-medium mb-1">{project.period}</p>
-                <h3 className="text-base font-semibold text-gray-900 mb-1">{project.title}</h3>
-                <p className="text-sm text-blue-600">{project.company}</p>
+                <h3 className="text-base font-semibold text-gray-900 mb-1 group-hover:text-gray-700 transition-colors">{project.title}</h3>
+                <p className="text-sm text-gray-400">{project.company}</p>
               </div>
               <div className="md:col-span-8">
                 <p className="text-sm text-gray-500 leading-relaxed mb-4">{project.description}</p>
@@ -73,7 +73,7 @@ export default function Projects() {
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-2.5 py-1 bg-gray-100 text-gray-500 text-xs rounded-full font-medium"
+                      className="px-2.5 py-1 bg-gray-50 text-gray-400 text-xs rounded-full font-medium border border-gray-100"
                     >
                       {tag}
                     </span>

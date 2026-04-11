@@ -21,8 +21,8 @@ export default function Contact() {
       <div className="max-w-5xl mx-auto px-8">
         <div className="grid md:grid-cols-12 gap-16">
           <div className="md:col-span-4">
-            <p className="text-xs text-gray-400 tracking-widest uppercase mb-4 font-medium">Kontakt</p>
-            <h2 className="text-3xl font-bold text-gray-900 leading-tight mb-8">
+            <p className="section-label text-xs text-gray-400 tracking-widest uppercase mb-4 font-medium">Kontakt</p>
+            <h2 className="font-playfair text-3xl font-bold text-gray-900 leading-tight mb-8">
               Pojďme<br />spolupracovat.
             </h2>
             <p className="text-gray-500 text-base leading-relaxed mb-8">
@@ -55,7 +55,7 @@ export default function Contact() {
                 <p className="text-gray-500">Ozvu se vám co nejdříve.</p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-5 bg-white rounded-2xl border border-gray-100 p-8">
+              <form onSubmit={handleSubmit} className="space-y-5 bg-white rounded-2xl border border-gray-100 p-8 shadow-sm">
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
                     <label htmlFor="name" className="block text-xs text-gray-400 font-medium mb-2 uppercase tracking-widest">
@@ -69,7 +69,7 @@ export default function Contact() {
                       value={form.name}
                       onChange={handleChange}
                       placeholder="Vaše jméno"
-                      className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition text-gray-900 bg-white text-sm"
+                      className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition text-gray-900 bg-stone-50/50 text-sm"
                     />
                   </div>
                   <div>
@@ -84,7 +84,7 @@ export default function Contact() {
                       value={form.email}
                       onChange={handleChange}
                       placeholder="your@email.com"
-                      className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition text-gray-900 bg-white text-sm"
+                      className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition text-gray-900 bg-stone-50/50 text-sm"
                     />
                   </div>
                 </div>
@@ -100,12 +100,12 @@ export default function Contact() {
                     value={form.message}
                     onChange={handleChange}
                     placeholder="Napište mi o vašem projektu nebo záměru..."
-                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition text-gray-900 bg-white resize-none text-sm"
+                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition text-gray-900 bg-stone-50/50 resize-none text-sm"
                   />
                 </div>
                 <button
                   type="submit"
-                  className="px-6 py-3 bg-gray-900 hover:bg-gray-700 text-white text-sm font-medium rounded-full transition-colors"
+                  className="px-6 py-3 bg-gray-900 hover:bg-gray-700 text-white text-sm font-medium rounded-full transition-all shadow-sm"
                 >
                   Odeslat zprávu →
                 </button>

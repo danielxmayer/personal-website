@@ -19,8 +19,8 @@ export default function About() {
       <div className="max-w-5xl mx-auto px-8">
         <div className="grid md:grid-cols-12 gap-16">
           <div className="md:col-span-4">
-            <p className="text-xs text-gray-400 tracking-widest uppercase mb-4 font-medium">O mně</p>
-            <h2 className="text-3xl font-bold text-gray-900 leading-tight">
+            <p className="section-label text-xs text-gray-400 tracking-widest uppercase mb-4 font-medium">O mně</p>
+            <h2 className="font-playfair text-3xl font-bold text-gray-900 leading-tight">
               Propojuji data,<br />média a&nbsp;značky.
             </h2>
           </div>
@@ -41,12 +41,12 @@ export default function About() {
             </p>
 
             <div className="border-t border-gray-100 pt-8">
-              <p className="text-xs text-gray-400 tracking-widest uppercase mb-5 font-medium">Dovednosti</p>
+              <p className="section-label text-xs text-gray-400 tracking-widest uppercase mb-5 font-medium">Dovednosti</p>
               <div className="flex flex-wrap gap-2">
                 {skills.map((skill) => (
                   <span
                     key={skill}
-                    className="px-3 py-1.5 bg-gray-50 text-gray-600 rounded-full text-sm border border-gray-200"
+                    className="px-3 py-1.5 bg-white text-gray-600 rounded-full text-sm border border-gray-200 hover:border-gray-400 hover:text-gray-900 transition-colors cursor-default"
                   >
                     {skill}
                   </span>
