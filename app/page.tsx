@@ -36,23 +36,23 @@ export default function Home() {
 
   return (
     <div className="min-h-screen text-gray-900">
-      {/* Fixed full-page background photo */}
-      <div className="fixed inset-0 -z-10">
-        <Image
-          src="/daniel.jpg"
-          alt="Daniel Mayer"
-          fill
-          priority
-          className="object-cover object-top"
-        />
-        {/* Subtle white overlay for readability */}
-        <div className="absolute inset-0 bg-white/75" />
-      </div>
-
       <Header activeSection={activeSection} />
       <main>
-        <Hero />
-        <About />
+        {/* Photo background covers only Hero + About */}
+        <div className="relative">
+          <div className="absolute inset-0 -z-10">
+            <Image
+              src="/daniel.jpg"
+              alt="Daniel Mayer"
+              fill
+              priority
+              className="object-cover object-top"
+            />
+            <div className="absolute inset-0 bg-white/75" />
+          </div>
+          <Hero />
+          <About />
+        </div>
         <Resume />
         <Projects />
         <Contact />
