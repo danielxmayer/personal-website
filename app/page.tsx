@@ -43,7 +43,7 @@ export default function Home() {
           alt="Daniel Mayer"
           fill
           priority
-          className="object-cover object-center"
+          className="object-cover object-top"
         />
         {/* Subtle white overlay for readability */}
         <div className="absolute inset-0 bg-white/75" />
