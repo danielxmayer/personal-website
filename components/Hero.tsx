@@ -8,7 +8,7 @@ export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen flex flex-col justify-center pt-16">
       {/* Content */}
-      <div className="relative max-w-5xl mx-auto px-6 w-full">
+      <div className="relative max-w-7xl mx-auto px-6 w-full">
         <div className="border-t border-gray-200 pt-16 pb-8">
           <p className="text-sm text-gray-400 tracking-widest uppercase mb-8 font-medium">
             Marketing &amp; Media Manager
