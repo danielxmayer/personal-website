@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import Image from 'next/image'
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
 import About from '@/components/About'
@@ -38,23 +37,8 @@ export default function Home() {
     <div className="min-h-screen text-gray-900">
       <Header activeSection={activeSection} />
       <main>
-        {/* Photo background covers only Hero + About */}
-        <div className="relative">
-          <div className="absolute inset-y-0 inset-x-0 -z-10">
-            <div className="relative h-full">
-              <Image
-                src="/daniel3.JPG"
-                alt="Daniel Mayer"
-                fill
-                priority
-                className="object-cover object-[50%_15%]"
-              />
-              <div className="absolute inset-0 bg-white/75" />
-            </div>
-          </div>
-          <Hero />
-          <About />
-        </div>
+        <Hero />
+        <About />
         <Resume />
         <Projects />
         <Contact />
