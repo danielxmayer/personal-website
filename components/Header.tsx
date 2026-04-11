@@ -35,6 +35,12 @@ export default function Header({ activeSection }: Props) {
             </button>
           ))}
         </nav>
+        <button
+          onClick={() => scrollToSection('contact')}
+          className="px-4 py-2 rounded-full text-sm font-medium bg-gray-900/90 text-white hover:bg-gray-700 transition-colors"
+        >
+          Kontakt
+        </button>
       </div>
     </header>
   )
