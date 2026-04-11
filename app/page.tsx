@@ -10,7 +10,7 @@ import Projects from '@/components/Projects'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 
-const SECTIONS = ['home', 'about', 'resume', 'projects', 'contact']
+const SECTIONS = ['home', 'about', 'resume', 'projects', 'testimonials', 'contact']
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState('home')

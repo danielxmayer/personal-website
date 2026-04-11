@@ -5,11 +5,10 @@ type Props = {
 }
 
 const navLinks = [
-  { id: 'home', label: 'Home' },
-  { id: 'about', label: 'About' },
-  { id: 'resume', label: 'Resume' },
-  { id: 'projects', label: 'Projects' },
-  { id: 'contact', label: 'Contact' },
+  { id: 'about', label: 'About me' },
+  { id: 'resume', label: 'Track record' },
+  { id: 'projects', label: 'Expertises' },
+  { id: 'testimonials', label: 'Testimonials' },
 ]
 
 function scrollToSection(id: string) {
@@ -19,29 +18,29 @@ function scrollToSection(id: string) {
 
 export default function Header({ activeSection }: Props) {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
-      <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-        <button
-          onClick={() => scrollToSection('home')}
-          className="text-sm font-semibold tracking-tight text-gray-900 hover:text-blue-600 transition-colors"
-        >
-          Daniel Mayer
-        </button>
-        <nav className="flex items-center gap-6">
+    <header className="fixed top-0 left-0 right-0 z-50">
+      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <nav className="flex items-center gap-2">
           {navLinks.map((link) => (
             <button
               key={link.id}
               onClick={() => scrollToSection(link.id)}
-              className={`text-sm transition-colors ${
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                 activeSection === link.id
-                  ? 'text-blue-600 font-medium'
-                  : 'text-gray-500 hover:text-gray-900'
+                  ? 'bg-gray-900 text-white'
+                  : 'bg-gray-900/90 text-white hover:bg-gray-700'
               }`}
             >
               {link.label}
             </button>
           ))}
         </nav>
+        <button
+          onClick={() => scrollToSection('contact')}
+          className="px-4 py-2 rounded-full text-sm font-medium bg-gray-900/90 text-white hover:bg-gray-700 transition-colors"
+        >
+          Contact
+        </button>
       </div>
     </header>
   )
