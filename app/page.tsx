@@ -46,7 +46,7 @@ export default function Home() {
               alt="Daniel Mayer"
               fill
               priority
-              className="object-cover object-top"
+              className="object-contain object-center"
             />
             <div className="absolute inset-0 bg-white/75" />
           </div>
