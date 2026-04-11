@@ -43,7 +43,7 @@ export default function Home() {
           <div className="absolute inset-y-0 inset-x-0 -z-10">
             <div className="relative h-full">
               <Image
-                src="/daniel2.JPG"
+                src="/daniel3.JPG"
                 alt="Daniel Mayer"
                 fill
                 priority
