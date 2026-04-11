@@ -7,9 +7,9 @@ export default function Hero() {
       {/* Left: text content */}
       <div className="flex flex-col justify-end pb-16 px-8 md:pl-16 md:pr-12">
         <div className="border-t border-gray-300 pt-10">
-          <h1 className="font-light leading-[0.92] tracking-tight text-[clamp(4rem,10vw,8rem)] mb-6">
-            <span className="block">Daniel</span>
-            <span className="block">Mayer</span>
+          <h1 className="font-playfair font-black leading-none text-[clamp(3.5rem,9vw,7rem)] mb-6">
+            <span className="block text-outline">Daniel</span>
+            <span className="block text-outline">Mayer</span>
           </h1>
 
           <p className="text-xs text-gray-400 tracking-[0.2em] uppercase mb-10">
