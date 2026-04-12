@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+@theme {
+  --font-playfair: "Playfair Display", serif;
+  --font-bebas: "Bebas Neue", sans-serif;
+  --font-space: "Space Grotesk", sans-serif;
+  --font-cormorant: "Cormorant Garamond", serif;
+  --font-dm-serif: "DM Serif Display", serif;
+}
+
 html {
   scroll-behavior: smooth;
 }
