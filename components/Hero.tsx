@@ -43,16 +43,18 @@ export default function Hero() {
       {/* Main content — bottom, full width */}
       <div className="relative z-10 flex flex-col justify-end min-h-screen pb-12 px-8 md:px-16">
 
-        {/* Value proposition */}
-        <p className="text-white/50 text-xs tracking-[0.25em] uppercase font-light mb-6">
-          Mediální strategie · Řízení investic · Brand building
-        </p>
-
-        {/* Name: Daniel left, Mayer right */}
-        <h1 className="font-barlow font-black leading-[0.88] text-[clamp(4rem,12vw,10rem)] tracking-tight flex justify-between items-end mb-8">
-          <span className="text-outline-white">Daniel</span>
-          <span className="text-outline-white">Mayer</span>
-        </h1>
+        {/* Name: stacked right, away from face */}
+        <div className="flex justify-end mb-8">
+          <div className="text-right">
+            <h1 className="font-barlow font-black leading-[0.88] text-[clamp(4rem,12vw,10rem)] tracking-tight">
+              <span className="block text-outline-white">Daniel</span>
+              <span className="block text-outline-white">Mayer</span>
+            </h1>
+            <p className="text-white/45 text-xs tracking-[0.25em] uppercase font-light mt-5">
+              Mediální strategie · Řízení investic · Brand building
+            </p>
+          </div>
+        </div>
 
         {/* Bottom bar: stats + title + CV button */}
         <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6 border-t border-white/20 pt-6">
