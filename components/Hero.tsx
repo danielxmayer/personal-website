@@ -1,41 +1,39 @@
-import Image from 'next/image'
-
 export default function Hero() {
   return (
-    <section id="home" className="relative min-h-screen overflow-hidden">
+    <section id="home" className="bg-[#f9f8f6] pt-16 pb-12 px-8 md:px-16 overflow-hidden">
 
-      {/* Full-width background photo */}
-      <Image
-        src="/daniel3.JPG"
-        alt="Daniel Mayer"
-        fill
-        priority
-        className="object-cover object-[50%_18%]"
-        sizes="100vw"
-      />
+      {/* Subtitle */}
+      <p className="text-xs text-gray-400 tracking-[0.2em] uppercase mb-6 font-medium">
+        Marketing &amp; Media Manager
+      </p>
 
-      {/* Overlay: subtle bottom gradient for text legibility */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+      {/* Staggered name */}
+      <h1 className="font-barlow font-black leading-none tracking-tight select-none">
+        <span className="block text-[clamp(5rem,16vw,13rem)] text-[#111827]">Daniel</span>
+        <span className="block text-[clamp(5rem,16vw,13rem)] text-[#111827] text-right">Mayer</span>
+      </h1>
 
-      {/* Text content — bottom right, over the photo */}
-      <div className="relative z-10 flex flex-col justify-end items-end min-h-screen pb-16 px-8 md:px-16">
-        <div className="border-t border-white/30 pt-10 text-right">
-          <h1 className="font-barlow font-black leading-none text-[clamp(3.5rem,9vw,7rem)] mb-6 tracking-tight">
-            <span className="block text-outline-white">Daniel</span>
-            <span className="block text-outline-white">Mayer</span>
-          </h1>
-
-          <p className="text-xs text-white/70 tracking-[0.2em] uppercase mb-10">
-            Marketing &amp; Media Manager
-          </p>
-
-          <div className="flex flex-wrap justify-end gap-6 text-sm text-white/60">
-            <span>TV Nova</span>
-            <span>Zonky</span>
-            <span>MAFRA</span>
-            <span>Médea</span>
-          </div>
+      {/* Description + CTA */}
+      <div className="mt-10 flex flex-col md:flex-row md:items-center gap-8 md:gap-16">
+        <p className="text-gray-600 text-base md:text-lg leading-relaxed max-w-md">
+          Více než 10 let řízení mediálních strategií, rozpočtů a výkonové optimalizace kampaní v TV, digitálním prostoru a OOH.
+        </p>
+        <div className="md:ml-auto shrink-0">
+          <a
+            href="#contact"
+            className="inline-block bg-[#111827] text-white text-sm font-medium px-7 py-3.5 rounded-full hover:bg-gray-700 transition-colors"
+          >
+            Kontaktujte mě →
+          </a>
         </div>
+      </div>
+
+      {/* Divider + companies */}
+      <div className="mt-10 border-t border-gray-200 pt-6 flex flex-wrap gap-8 text-sm text-gray-400">
+        <span>TV Nova</span>
+        <span>Zonky</span>
+        <span>MAFRA</span>
+        <span>Médea</span>
       </div>
 
     </section>
