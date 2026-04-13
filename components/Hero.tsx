@@ -4,39 +4,89 @@ export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen overflow-hidden">
 
-      {/* Full-width background photo */}
+      {/* Background photo */}
       <Image
         src="/daniel3.JPG"
         alt="Daniel Mayer"
         fill
         priority
-        className="object-cover object-[50%_18%]"
+        className="object-cover object-[50%_15%]"
         sizes="100vw"
       />
 
-      {/* Overlay: subtle bottom gradient for text legibility */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+      {/* Layer 1: left-side vignette for text legibility */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/10 to-transparent" />
 
-      {/* Text content — bottom right, over the photo */}
+      {/* Layer 2: bottom-to-top gradient for text block */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
+
+      {/* Layer 3: subtle overall darkening */}
+      <div className="absolute inset-0 bg-black/10" />
+
+      {/* Top bar: year + availability */}
+      <div className="absolute top-0 left-0 right-0 z-10 flex items-center justify-between px-8 md:px-16 pt-8">
+        <span className="text-xs text-white/40 tracking-[0.25em] uppercase font-light">
+          danielmayer.cz
+        </span>
+        <span className="flex items-center gap-2 text-xs text-white/40 tracking-[0.15em] uppercase font-light">
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400/70 animate-pulse" />
+          Dostupný pro spolupráci
+        </span>
+      </div>
+
+      {/* Main text — bottom right */}
       <div className="relative z-10 flex flex-col justify-end items-end min-h-screen pb-16 px-8 md:px-16">
-        <div className="border-t border-white/30 pt-10 text-right">
-          <h1 className="font-barlow font-black leading-none text-[clamp(3.5rem,9vw,7rem)] mb-6 tracking-tight">
+        <div className="text-right">
+
+          {/* Horizontal rule */}
+          <div className="flex justify-end mb-8">
+            <div className="w-12 h-px bg-white/30" />
+          </div>
+
+          {/* Name */}
+          <h1 className="font-barlow font-black leading-[0.88] text-[clamp(4rem,10vw,8rem)] mb-5 tracking-tight">
             <span className="block text-outline-white">Daniel</span>
             <span className="block text-outline-white">Mayer</span>
           </h1>
 
-          <p className="text-xs text-white/70 tracking-[0.2em] uppercase mb-10">
+          {/* Title */}
+          <p className="text-[0.65rem] text-white/60 tracking-[0.3em] uppercase mb-6 font-light">
             Marketing &amp; Media Manager
           </p>
 
-          <div className="flex flex-wrap justify-end gap-6 text-sm text-white/60">
+          {/* Brands */}
+          <div className="flex flex-wrap justify-end gap-x-5 gap-y-1 text-[0.7rem] text-white/35 tracking-[0.15em] uppercase font-light">
             <span>TV Nova</span>
+            <span className="text-white/15">·</span>
             <span>Zonky</span>
+            <span className="text-white/15">·</span>
             <span>MAFRA</span>
+            <span className="text-white/15">·</span>
             <span>Médea</span>
           </div>
         </div>
       </div>
+
+      {/* Scroll indicator — bottom center */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2">
+        <span className="text-[0.6rem] text-white/30 tracking-[0.3em] uppercase">scroll</span>
+        <div className="w-px h-10 bg-gradient-to-b from-white/30 to-transparent relative overflow-hidden">
+          <div
+            className="absolute top-0 left-0 w-full bg-white/60"
+            style={{
+              height: '40%',
+              animation: 'scrollLine 1.8s ease-in-out infinite',
+            }}
+          />
+        </div>
+      </div>
+
+      <style>{`
+        @keyframes scrollLine {
+          0%   { transform: translateY(-100%); opacity: 1; }
+          100% { transform: translateY(350%);  opacity: 0; }
+        }
+      `}</style>
 
     </section>
   )
