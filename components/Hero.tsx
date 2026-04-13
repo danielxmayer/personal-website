@@ -34,28 +34,21 @@ export default function Hero() {
         </span>
       </div>
 
-      {/* Main text — bottom right */}
-      <div className="relative z-10 flex flex-col justify-end items-end min-h-screen pb-16 px-8 md:px-16">
-        <div className="text-right">
+      {/* Main text — bottom, full width */}
+      <div className="relative z-10 flex flex-col justify-end min-h-screen pb-16 px-8 md:px-16">
 
-          {/* Horizontal rule */}
-          <div className="flex justify-end mb-8">
-            <div className="w-12 h-px bg-white/30" />
-          </div>
+        {/* Name: Daniel left, Mayer right */}
+        <h1 className="font-barlow font-black leading-[0.88] text-[clamp(4rem,12vw,10rem)] tracking-tight flex justify-between items-end mb-5">
+          <span className="text-outline-white">Daniel</span>
+          <span className="text-outline-white">Mayer</span>
+        </h1>
 
-          {/* Name */}
-          <h1 className="font-barlow font-black leading-[0.88] text-[clamp(4rem,10vw,8rem)] mb-5 tracking-tight">
-            <span className="block text-outline-white">Daniel</span>
-            <span className="block text-outline-white">Mayer</span>
-          </h1>
-
-          {/* Title */}
-          <p className="text-[0.65rem] text-white/60 tracking-[0.3em] uppercase mb-6 font-light">
+        {/* Divider + meta row */}
+        <div className="flex items-center justify-between border-t border-white/20 pt-5">
+          <p className="text-[0.65rem] text-white/60 tracking-[0.3em] uppercase font-light">
             Marketing &amp; Media Manager
           </p>
-
-          {/* Brands */}
-          <div className="flex flex-wrap justify-end gap-x-5 gap-y-1 text-[0.7rem] text-white/35 tracking-[0.15em] uppercase font-light">
+          <div className="flex gap-x-4 text-[0.65rem] text-white/35 tracking-[0.15em] uppercase font-light">
             <span>TV Nova</span>
             <span className="text-white/15">·</span>
             <span>Zonky</span>
@@ -65,6 +58,7 @@ export default function Hero() {
             <span>Médea</span>
           </div>
         </div>
+
       </div>
 
       {/* Scroll indicator — bottom center */}
