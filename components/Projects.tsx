@@ -1,0 +1,88 @@
+const projects = [
+  {
+    title: 'Voyo – Předplatitelský růst',
+    company: 'TV Nova',
+    period: '2021 – 2026',
+    description:
+      'Řízení mediální a marketingové strategie streamovací platformy Voyo. Nárůst z 100 tisíc na 950 tisíc předplatitelů díky integrovaným kampaním napříč TV, digitálním prostorem a OOH.',
+    tags: ['Streaming', 'Performance', 'Brand Building'],
+  },
+  {
+    title: 'Oneplay – Uvedení na trh',
+    company: 'TV Nova',
+    period: '2022',
+    description:
+      'Strategické mediální plánování pro launch nové herní platformy. Rychlý nárůst spontánní znalosti značky na úroveň původního Voyo díky přesně cíleným kampaním.',
+    tags: ['Launch', 'Media Planning', 'Awareness'],
+  },
+  {
+    title: 'Rebranding Nova',
+    company: 'TV Nova',
+    period: '2023',
+    description:
+      'Výběr kreativní agentury a řízení brandové transformace. Nová vizuální identita stanice Nova – posílení rozpoznatelnosti a modernizace vnímání značky.',
+    tags: ['Branding', 'Agency Management', 'TV'],
+  },
+  {
+    title: 'ATL mediální kampaně',
+    company: 'Zonky',
+    period: '2017 – 2021',
+    description:
+      'Tvorba a řízení mediálních plánů pro fintech brand napříč TV, tiskem, rozhlasem a online. Výkonová optimalizace kampaní a odpovědnost za ATL marketingový rozpočet.',
+    tags: ['ATL', 'Fintech', 'Multi-channel'],
+  },
+  {
+    title: 'Media Planning & Evaluation',
+    company: 'MAFRA',
+    period: '2014 – 2017',
+    description:
+      'Kompletní příprava mediaplánů pro značky skupiny MAFRA. Vyhodnocování výsledků kampaní, kontrola garancí a plnění mediálního rozpočtu.',
+    tags: ['Media Planning', 'Publishing', 'Reporting'],
+  },
+]
+
+export default function Projects() {
+  return (
+    <section id="projects" className="py-24 border-t border-gray-200">
+      <div className="max-w-5xl mx-auto px-8">
+        <div className="grid md:grid-cols-12 gap-16 mb-16">
+          <div className="md:col-span-4">
+            <p className="section-label text-xs text-gray-400 tracking-widest uppercase mb-4 font-medium">Reference</p>
+            <h2 className="font-playfair text-3xl font-bold text-gray-900 leading-tight">Vybrané<br />projekty</h2>
+          </div>
+          <div className="md:col-span-8" />
+        </div>
+
+        <div className="space-y-px border border-gray-100 rounded-2xl overflow-hidden">
+          {projects.map((project, i) => (
+            <div
+              key={project.title}
+              className={`group grid md:grid-cols-12 gap-6 p-7 transition-colors ${
+                i % 2 === 0 ? 'bg-white/80' : 'bg-stone-50/80'
+              } hover:bg-white`}
+            >
+              <div className="md:col-span-4">
+                <p className="text-xs text-gray-400 font-medium mb-1">{project.period}</p>
+                <h3 className="text-base font-semibold text-gray-900 mb-1 group-hover:text-gray-700 transition-colors">{project.title}</h3>
+                <p className="text-sm text-gray-400">{project.company}</p>
+              </div>
+              <div className="md:col-span-8">
+                <p className="text-sm text-gray-500 leading-relaxed mb-4">{project.description}</p>
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-2.5 py-1 bg-gray-50 text-gray-400 text-xs rounded-full font-medium border border-gray-100"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
