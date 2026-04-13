@@ -30,6 +30,13 @@ export default function Contact() {
             </p>
             <div className="space-y-3">
               <a
+                href="tel:+420000000000"
+                className="flex items-center gap-3 text-sm text-gray-500 hover:text-gray-900 transition-colors"
+              >
+                <span className="w-8 h-8 flex items-center justify-center bg-white border border-gray-200 rounded-full text-xs">✆</span>
+                +420 000 000 000
+              </a>
+              <a
                 href="mailto:daniel.mayer@seznam.cz"
                 className="flex items-center gap-3 text-sm text-gray-500 hover:text-gray-900 transition-colors"
               >

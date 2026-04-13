@@ -7,7 +7,7 @@ type Props = {
 const navLinks = [
   { id: 'about', label: 'O mně' },
   { id: 'resume', label: 'Zkušenosti' },
-  { id: 'projects', label: 'Expertízy' },
+  { id: 'projects', label: 'Projekty' },
   { id: 'testimonials', label: 'Reference' },
 ]
 

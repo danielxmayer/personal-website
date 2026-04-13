@@ -1,5 +1,11 @@
 import Image from 'next/image'
 
+const stats = [
+  { value: '10+', label: 'let praxe' },
+  { value: '950K', label: 'předplatitelů Voyo' },
+  { value: '3', label: 'mediální domy' },
+]
+
 export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen overflow-hidden">
@@ -14,16 +20,16 @@ export default function Hero() {
         sizes="100vw"
       />
 
-      {/* Layer 1: left-side vignette for text legibility */}
+      {/* Layer 1: left-side vignette */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/10 to-transparent" />
 
-      {/* Layer 2: bottom-to-top gradient for text block */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
+      {/* Layer 2: bottom gradient */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
 
       {/* Layer 3: subtle overall darkening */}
       <div className="absolute inset-0 bg-black/10" />
 
-      {/* Top bar: year + availability */}
+      {/* Top bar */}
       <div className="absolute top-0 left-0 right-0 z-10 flex items-center justify-between px-8 md:px-16 pt-8">
         <span className="text-xs text-white/40 tracking-[0.25em] uppercase font-light">
           danielmayer.cz
@@ -34,43 +40,59 @@ export default function Hero() {
         </span>
       </div>
 
-      {/* Main text — bottom, full width */}
-      <div className="relative z-10 flex flex-col justify-end min-h-screen pb-16 px-8 md:px-16">
+      {/* Main content — bottom, full width */}
+      <div className="relative z-10 flex flex-col justify-end min-h-screen pb-12 px-8 md:px-16">
+
+        {/* Value proposition */}
+        <p className="text-white/50 text-xs tracking-[0.25em] uppercase font-light mb-6">
+          Mediální strategie · Řízení investic · Brand building
+        </p>
 
         {/* Name: Daniel left, Mayer right */}
-        <h1 className="font-barlow font-black leading-[0.88] text-[clamp(4rem,12vw,10rem)] tracking-tight flex justify-between items-end mb-5">
+        <h1 className="font-barlow font-black leading-[0.88] text-[clamp(4rem,12vw,10rem)] tracking-tight flex justify-between items-end mb-8">
           <span className="text-outline-white">Daniel</span>
           <span className="text-outline-white">Mayer</span>
         </h1>
 
-        {/* Divider + meta row */}
-        <div className="flex items-center justify-between border-t border-white/20 pt-5">
-          <p className="text-[0.65rem] text-white/60 tracking-[0.3em] uppercase font-light">
-            Marketing &amp; Media Manager
-          </p>
-          <div className="flex gap-x-4 text-[0.65rem] text-white/35 tracking-[0.15em] uppercase font-light">
-            <span>TV Nova</span>
-            <span className="text-white/15">·</span>
-            <span>Zonky</span>
-            <span className="text-white/15">·</span>
-            <span>MAFRA</span>
-            <span className="text-white/15">·</span>
-            <span>Médea</span>
-          </div>
-        </div>
+        {/* Bottom bar: stats + title + CV button */}
+        <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6 border-t border-white/20 pt-6">
 
+          {/* Stats */}
+          <div className="flex gap-8">
+            {stats.map((s) => (
+              <div key={s.label}>
+                <p className="text-white text-xl font-semibold leading-none mb-1">{s.value}</p>
+                <p className="text-white/40 text-[0.6rem] tracking-[0.2em] uppercase font-light">{s.label}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Title + CV */}
+          <div className="flex flex-col sm:items-end gap-3">
+            <p className="text-[0.65rem] text-white/60 tracking-[0.3em] uppercase font-light">
+              Marketing &amp; Media Manager
+            </p>
+            <a
+              href="/Daniel_Mayer_CV_2026.pdf"
+              download
+              className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-white/30 text-white/80 text-xs tracking-[0.15em] uppercase font-medium hover:bg-white hover:text-gray-900 transition-all duration-300"
+            >
+              Stáhnout CV
+              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3" />
+              </svg>
+            </a>
+          </div>
+
+        </div>
       </div>
 
-      {/* Scroll indicator — bottom center */}
+      {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2">
-        <span className="text-[0.6rem] text-white/30 tracking-[0.3em] uppercase">scroll</span>
         <div className="w-px h-10 bg-gradient-to-b from-white/30 to-transparent relative overflow-hidden">
           <div
             className="absolute top-0 left-0 w-full bg-white/60"
-            style={{
-              height: '40%',
-              animation: 'scrollLine 1.8s ease-in-out infinite',
-            }}
+            style={{ height: '40%', animation: 'scrollLine 1.8s ease-in-out infinite' }}
           />
         </div>
       </div>
