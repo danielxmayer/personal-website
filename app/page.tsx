@@ -13,7 +13,7 @@ export default function Home() {
   const [activeSection, setActiveSection] = useState('home')
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-zinc-950">
       <Header activeSection={activeSection} setActiveSection={setActiveSection} />
       <main>
         {activeSection === 'home' && <Hero setActiveSection={setActiveSection} />}
