@@ -20,7 +20,7 @@ export default function Hero() {
       {/* Text content — bottom right, over the photo */}
       <div className="relative z-10 flex flex-col justify-end items-end min-h-screen pb-16 px-8 md:px-16">
         <div className="border-t border-white/30 pt-10 text-right">
-          <h1 className="font-sans font-black leading-none text-[clamp(3.5rem,9vw,7rem)] mb-6 tracking-tight">
+          <h1 className="font-barlow font-black leading-none text-[clamp(3.5rem,9vw,7rem)] mb-6 tracking-tight">
             <span className="block text-outline-white">Daniel</span>
             <span className="block text-outline-white">Mayer</span>
           </h1>
