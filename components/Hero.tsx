@@ -12,7 +12,7 @@ export default function Hero() {
 
       {/* Background photo */}
       <Image
-        src="/daniel3.JPG"
+        src="/daniel.JPG"
         alt="Daniel Mayer"
         fill
         priority
