@@ -16,15 +16,15 @@ export default function Hero() {
         alt="Daniel Mayer"
         fill
         priority
-        className="object-cover object-[25%_15%]"
+        className="object-cover object-[50%_20%] md:object-[25%_15%]"
         sizes="100vw"
       />
 
       {/* Layer 1: left-side vignette */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/20 to-transparent" />
 
-      {/* Layer 2: bottom gradient */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
+      {/* Layer 2: bottom gradient — silnější na mobilu pro čitelnost jména */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent md:from-black/80 md:via-black/25" />
 
       {/* Layer 3: subtle overall darkening */}
       <div className="absolute inset-0 bg-black/10" />
@@ -70,14 +70,14 @@ export default function Hero() {
           </div>
 
           {/* Title + CV */}
-          <div className="flex flex-col sm:items-end gap-3">
+          <div className="flex flex-col items-start sm:items-end gap-3">
             <p className="text-[0.65rem] text-white/60 tracking-[0.3em] uppercase font-light">
               Marketing &amp; Media Manager
             </p>
             <a
               href="/Daniel_Mayer_CV_2026.pdf"
               download
-              className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-white/30 text-white/80 text-xs tracking-[0.15em] uppercase font-medium hover:bg-white hover:text-gray-900 transition-all duration-300"
+              className="inline-flex items-center gap-2 px-5 py-2.5 min-h-[44px] rounded-full border border-white/30 text-white/80 text-xs tracking-[0.15em] uppercase font-medium hover:bg-white hover:text-gray-900 transition-all duration-300"
             >
               Stáhnout CV
               <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -41,3 +41,23 @@ body {
   margin-right: 0.5rem;
   opacity: 0.4;
 }
+
+/* Mobile: hero name as solid white (override outline effect below md) */
+@media (max-width: 767px) {
+  .text-outline-white {
+    -webkit-text-stroke: 0;
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.7);
+  }
+}
+
+/* Mobile menu animations */
+@keyframes menuFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes menuSlideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
