@@ -134,7 +134,7 @@ export default function Resume() {
             <a
               href="/Daniel_Mayer_CV_2026.pdf"
               download
-              className="inline-flex items-center gap-2 px-5 py-2.5 border border-gray-200 hover:border-gray-900 hover:text-gray-900 text-gray-400 text-sm font-medium rounded-full transition-all"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white hover:bg-gray-800 text-sm font-medium rounded-full transition-all min-h-[44px]"
             >
               Stáhnout CV (PDF) ↓
             </a>
