@@ -51,7 +51,7 @@ export default function Hero() {
       <div className="relative z-10 flex flex-col justify-end min-h-screen pb-12 px-8 md:px-16">
 
         {/* Mayer — right, 15% above bottom */}
-        <div className="mb-[15vh] flex justify-end">
+        <div className="mb-[25vh] flex justify-end">
           <h1 className="font-barlow font-black leading-[0.88] text-[clamp(4rem,12vw,10rem)] tracking-tight">
             <span className="text-outline-white">Mayer</span>
           </h1>
