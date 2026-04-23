@@ -41,7 +41,7 @@ export default function Hero() {
       </div>
 
       {/* Daniel — top-left */}
-      <div className="absolute z-10 top-[20%] left-8 md:left-16">
+      <div className="absolute z-10 top-[10%] left-8 md:left-16">
         <span className="font-barlow font-black leading-[0.88] text-[clamp(4rem,12vw,10rem)] tracking-tight text-outline-white">
           Daniel
         </span>
