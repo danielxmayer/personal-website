@@ -50,7 +50,7 @@ export default function Hero() {
               <span className="block text-outline-white">Daniel</span>
               <span className="block text-outline-white">Mayer</span>
             </h1>
-            <p className="text-white/45 text-xs tracking-[0.25em] uppercase font-light mt-5">
+            <p className="text-white/45 text-xs tracking-[0.25em] uppercase font-light mt-38">
               Mediální strategie · Řízení investic · Brand building
             </p>
           </div>
