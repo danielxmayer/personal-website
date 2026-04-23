@@ -40,21 +40,20 @@ export default function Hero() {
         </span>
       </div>
 
-      {/* Daniel — top-left */}
-      <div className="absolute z-10 top-[28%] left-8 md:left-24">
-        <span className="font-barlow font-black leading-[0.88] text-[clamp(4rem,12vw,10rem)] tracking-tight text-outline-white">
-          Daniel
-        </span>
-      </div>
-
       {/* Main content — bottom, full width */}
       <div className="relative z-10 flex flex-col justify-end min-h-screen pb-12 px-8 md:px-16">
 
-        {/* Mayer — right, 66% above bottom */}
-        <div className="mb-[55vh] flex justify-end">
-          <h1 className="font-barlow font-black leading-[0.88] text-[clamp(4rem,12vw,10rem)] tracking-tight">
-            <span className="text-outline-white">Mayer</span>
-          </h1>
+        {/* Name: stacked right, away from face */}
+        <div className="flex justify-end mb-8">
+          <div className="text-right">
+            <h1 className="font-barlow font-black leading-[0.88] text-[clamp(4rem,12vw,10rem)] tracking-tight">
+              <span className="block text-outline-white">Daniel</span>
+              <span className="block text-outline-white">Mayer</span>
+            </h1>
+            <p className="text-white/45 text-xs tracking-[0.25em] uppercase font-light mt-38">
+              Mediální strategie · Řízení investic · Brand building
+            </p>
+          </div>
         </div>
 
         {/* Bottom bar: stats + title + CV button */}
@@ -72,9 +71,6 @@ export default function Hero() {
 
           {/* Title + CV */}
           <div className="flex flex-col items-start sm:items-end gap-3">
-            <p className="text-white/60 text-xs tracking-[0.25em] uppercase font-light">
-              Mediální strategie · Řízení investic · Brand building
-            </p>
             <p className="text-[0.65rem] text-white/60 tracking-[0.3em] uppercase font-light">
               Marketing &amp; Media Manager
             </p>
