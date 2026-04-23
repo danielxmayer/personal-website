@@ -40,18 +40,26 @@ export default function Hero() {
         </span>
       </div>
 
+      {/* Daniel — top-left, first third */}
+      <div className="absolute z-10 top-[30%] left-8 md:left-16">
+        <span className="font-barlow font-black leading-[0.88] text-[clamp(4rem,12vw,10rem)] tracking-tight text-outline-white">
+          Daniel
+        </span>
+      </div>
+
       {/* Main content — bottom, full width */}
       <div className="relative z-10 flex flex-col justify-end min-h-screen pb-12 px-8 md:px-16">
 
-        {/* Name: Daniel left, Mayer right */}
-        <div className="mb-8">
-          <h1 className="font-barlow font-black leading-[0.88] text-[clamp(4rem,12vw,10rem)] tracking-tight flex justify-between">
-            <span className="text-outline-white">Daniel</span>
-            <span className="text-outline-white">Mayer</span>
-          </h1>
-          <p className="text-white/45 text-xs tracking-[0.25em] uppercase font-light mt-5 text-right">
-            Mediální strategie · Řízení investic · Brand building
-          </p>
+        {/* Mayer — right, 25% above bottom */}
+        <div className="mb-[25vh] flex justify-end">
+          <div className="text-right">
+            <h1 className="font-barlow font-black leading-[0.88] text-[clamp(4rem,12vw,10rem)] tracking-tight">
+              <span className="text-outline-white">Mayer</span>
+            </h1>
+            <p className="text-white/45 text-xs tracking-[0.25em] uppercase font-light mt-5">
+              Mediální strategie · Řízení investic · Brand building
+            </p>
+          </div>
         </div>
 
         {/* Bottom bar: stats + title + CV button */}
