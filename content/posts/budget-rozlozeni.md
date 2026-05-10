@@ -25,7 +25,7 @@ Jenže v dlouhém horizontu se profitabilita pohybuje opačným směrem. IPA dat
 
 Efektivita roste. Výsledky se zhoršují. IPA to pojmenovala přesně: death spiral — stav, kdy budget, kampaně i zisky klesají najednou, každý rok trochu víc.
 
-<iframe src="/blog/budget-infographic.html" width="100%" height="560" frameborder="0" style="border:none; border-radius:8px; margin: 24px 0;"></iframe>
+![Skutečné vs. doporučené rozdělení marketingového budgetu — IPA data](/blog/budget-infographic.png)
 
 ## Čísla z roku 2024, která mluví za sebe
 
