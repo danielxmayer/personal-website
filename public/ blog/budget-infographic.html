@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Budget Infografika — danielmayer.space</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: #F5F0E8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+  }
+
+  .card {
+    background: #F5F0E8;
+    max-width: 860px;
+    width: 100%;
+  }
+
+  .top-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #8B7355;
+    margin-bottom: 6px;
+  }
+
+  h1 {
+    font-size: clamp(22px, 4vw, 36px);
+    font-weight: 900;
+    line-height: 1.1;
+    color: #1A1208;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+  }
+
+  h1 span {
+    color: #C84B00;
+  }
+
+  .subtitle {
+    font-size: 13px;
+    color: #5A4A30;
+    margin-bottom: 32px;
+    line-height: 1.5;
+    max-width: 540px;
+  }
+
+  .chart-area {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+  }
+
+  /* --- BUBBLES --- */
+  .bubble-wrap {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .bubble-number {
+    font-size: clamp(28px, 5vw, 52px);
+    font-weight: 900;
+    color: #1A1208;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .bubble {
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .bubble:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+  }
+
+  .bubble-inner {
+    text-align: center;
+    padding: 16px;
+  }
+
+  .bubble-pct {
+    font-size: clamp(24px, 4vw, 42px);
+    font-weight: 900;
+    line-height: 1;
+    color: #fff;
+  }
+
+  .bubble-label {
+    font-size: clamp(10px, 1.5vw, 13px);
+    font-weight: 600;
+    color: rgba(255,255,255,0.85);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 4px;
+  }
+
+  .bubble-metric {
+    font-size: clamp(10px, 1.4vw, 12px);
+    color: rgba(255,255,255,0.7);
+    margin-top: 6px;
+    line-height: 1.3;
+    max-width: 110px;
+  }
+
+  /* Performance — velká bublina */
+  .bubble-performance {
+    width: clamp(200px, 32vw, 300px);
+    height: clamp(200px, 32vw, 300px);
+    background: radial-gradient(circle at 35% 35%, #E8610A, #B03A00);
+    box-shadow: 0 8px 32px rgba(176, 58, 0, 0.35);
+  }
+
+  /* Brand — střední bublina */
+  .bubble-brand {
+    width: clamp(130px, 20vw, 190px);
+    height: clamp(130px, 20vw, 190px);
+    background: radial-gradient(circle at 35% 35%, #2D6FA8, #1A4870);
+    box-shadow: 0 8px 28px rgba(26, 72, 112, 0.3);
+  }
+
+  /* IPA ideal — outline bubble */
+  .bubble-ideal-wrap {
+    display: flex;
+    gap: 12px;
+    align-items: flex-end;
+  }
+
+  .bubble-ideal {
+    border: 3px dashed #8B7355;
+    background: transparent;
+    cursor: default;
+  }
+
+  .bubble-ideal:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .bubble-ideal-perf {
+    width: clamp(165px, 25vw, 230px);
+    height: clamp(165px, 25vw, 230px);
+  }
+
+  .bubble-ideal-brand {
+    width: clamp(200px, 30vw, 280px);
+    height: clamp(200px, 30vw, 280px);
+  }
+
+  .bubble-ideal .bubble-pct {
+    color: #5A4A30;
+  }
+
+  .bubble-ideal .bubble-label {
+    color: #8B7355;
+  }
+
+  .bubble-ideal .bubble-metric {
+    color: #8B7355;
+  }
+
+  /* Section labels */
+  .section-header {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #8B7355;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #D4C9B0;
+  }
+
+  .section {
+    flex: 1;
+    min-width: 260px;
+  }
+
+  /* divider */
+  .divider {
+    width: 2px;
+    background: #D4C9B0;
+    align-self: stretch;
+    flex-shrink: 0;
+  }
+
+  /* arrow annotation */
+  .annotation {
+    background: #fff8ef;
+    border-left: 3px solid #C84B00;
+    padding: 10px 14px;
+    border-radius: 0 6px 6px 0;
+    font-size: 12px;
+    color: #3A2A10;
+    line-height: 1.5;
+    max-width: 260px;
+  }
+
+  .annotation strong {
+    color: #C84B00;
+    display: block;
+    font-weight: 800;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 3px;
+  }
+
+  .middle-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    flex-shrink: 0;
+  }
+
+  .vs-badge {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #1A1208;
+    color: #F5F0E8;
+    font-size: 13px;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: -0.02em;
+  }
+
+  /* Tooltip */
+  .tooltip {
+    position: absolute;
+    bottom: calc(100% + 12px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1A1208;
+    color: #F5F0E8;
+    font-size: 12px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+    z-index: 10;
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  .tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: #1A1208;
+  }
+
+  .bubble-wrap:hover .tooltip {
+    opacity: 1;
+  }
+
+  /* Bottom stats */
+  .stats-row {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: 28px;
+    padding-top: 20px;
+    border-top: 1px solid #D4C9B0;
+  }
+
+  .stat {
+    flex: 1;
+    min-width: 140px;
+  }
+
+  .stat-number {
+    font-size: clamp(20px, 3.5vw, 32px);
+    font-weight: 900;
+    color: #C84B00;
+    line-height: 1;
+  }
+
+  .stat-number.blue { color: #2D6FA8; }
+  .stat-number.green { color: #2A7A3B; }
+
+  .stat-desc {
+    font-size: 11px;
+    color: #5A4A30;
+    margin-top: 4px;
+    line-height: 1.4;
+  }
+
+  /* Source */
+  .source {
+    margin-top: 20px;
+    font-size: 10px;
+    color: #A09080;
+    letter-spacing: 0.04em;
+  }
+
+  /* Mobile */
+  @media (max-width: 600px) {
+    .chart-area { flex-direction: column; align-items: center; }
+    .divider { width: 100%; height: 2px; }
+    .middle-col { flex-direction: row; }
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <div class="top-label">IPA Research · Binet &amp; Field · 2023</div>
+  <h1>Marketingový <span>budget</span><br>vs. skutečný dopad</h1>
+  <p class="subtitle">
+    65 % marketérů věří, že ROI je klíčový ukazatel efektivity.<br>
+    IPA data říkají, že budget je 8× důležitější. Tady je proč.
+  </p>
+
+  <div class="chart-area">
+
+    <!-- LEVÁ: SKUTEČNOST -->
+    <div class="section">
+      <div class="section-header">Skutečné rozdělení (průměr)</div>
+      <div style="display:flex; align-items:flex-end; gap:16px; flex-wrap:wrap;">
+
+        <!-- Velká bublina: Performance 69% -->
+        <div class="bubble-wrap">
+          <div class="tooltip">Performance marketing<br>přináší okamžitý ROI,<br>ale eroze značky = death spiral</div>
+          <div class="bubble-number">69<span style="font-size:0.5em">%</span></div>
+          <div class="bubble bubble-performance">
+            <div class="bubble-inner">
+              <div class="bubble-pct">Performance</div>
+              <div class="bubble-label">Short-term</div>
+              <div class="bubble-metric">ROI ↑ +4%<br>Zisk ↓ −11%</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Menší bublina: Brand 31% -->
+        <div class="bubble-wrap">
+          <div class="tooltip">Brand building<br>generuje zisk až za 6–18 měsíců,<br>ale compound efekt je 8× silnější</div>
+          <div class="bubble-number">31<span style="font-size:0.5em">%</span></div>
+          <div class="bubble bubble-brand">
+            <div class="bubble-inner">
+              <div class="bubble-pct">Brand</div>
+              <div class="bubble-label">Long-term</div>
+              <div class="bubble-metric">Zisk ↑ dlouhodobě</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- STŘED -->
+    <div class="middle-col">
+      <div class="vs-badge">VS</div>
+      <div class="annotation">
+        <strong>Death spiral</strong>
+        Více performance → menší brand → vyšší CPA → méně performance budget → repeat.
+      </div>
+    </div>
+
+    <!-- PRAVÁ: IPA IDEAL -->
+    <div class="section">
+      <div class="section-header">IPA doporučení (60/40)</div>
+      <div style="display:flex; align-items:flex-end; gap:12px; flex-wrap:wrap;">
+
+        <!-- Brand 60% — větší ideální bublina -->
+        <div class="bubble-wrap">
+          <div class="bubble-number">60<span style="font-size:0.5em">%</span></div>
+          <div class="bubble bubble-ideal bubble-ideal-brand">
+            <div class="bubble-inner">
+              <div class="bubble-pct">Brand</div>
+              <div class="bubble-label">Long-term</div>
+              <div class="bubble-metric" style="color:#5A4A30">Compound growth<br>Pricing power<br>Loyalty</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Performance 40% -->
+        <div class="bubble-wrap">
+          <div class="bubble-number">40<span style="font-size:0.5em">%</span></div>
+          <div class="bubble bubble-ideal bubble-ideal-perf">
+            <div class="bubble-inner">
+              <div class="bubble-pct">Perf.</div>
+              <div class="bubble-label">Short-term</div>
+              <div class="bubble-metric" style="color:#5A4A30">Activation<br>okamžitý ROI</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom stats -->
+  <div class="stats-row">
+    <div class="stat">
+      <div class="stat-number">8×</div>
+      <div class="stat-desc">silnější vliv budgetu na long-term profit než jakékoli jiné rozhodnutí</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number blue">+4%</div>
+      <div class="stat-desc">průměrný ROI při přeinvestování do performance marketingu</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number" style="color:#B03A00">−11%</div>
+      <div class="stat-desc">průměrný pokles zisku u stejných kampaní orientovaných na short-term</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number green">60/40</div>
+      <div class="stat-desc">IPA optimální split — brand building vs. performance activation</div>
+    </div>
+  </div>
+
+  <div class="source">Zdroj: IPA Databank, Binet &amp; Field „The Long and the Short of It" · danielmayer.space</div>
+</div>
+
+</body>
+</html>
