@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import '../styles/globals.css'
 
 export const metadata: Metadata = {
@@ -28,7 +29,15 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+
+        <Script
+          id="hubspot-tracking"
+          src="https://js-eu1.hs-scripts.com/148454998.js"
+          strategy="afterInteractive"
+        />
+      </body>
     </html>
   )
 }
