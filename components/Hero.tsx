@@ -100,4 +100,10 @@ export default function Hero() {
       <style>{`
         @keyframes scrollLine {
           0%   { transform: translateY(-100%); opacity: 1; }
-          100% { transform: translateY(350%);  opa
+          100% { transform: translateY(350%);  opacity: 0; }
+        }
+      `}</style>
+
+    </section>
+  )
+}

@@ -48,4 +48,15 @@ export default function BlogPage() {
               <p className="text-gray-600 leading-relaxed mb-5">{post.perex}</p>
               <Link
                 href={`/blog/${post.slug}`}
-                className="text-sm font-semibold text-gray-900 hover:text-gray-500 transiti
+                className="text-sm font-semibold text-gray-900 hover:text-gray-500 transition-colors"
+              >
+                Číst dál →
+              </Link>
+            </article>
+          ))}
+        </div>
+      </main>
+      <Footer />
+    </div>
+  )
+}

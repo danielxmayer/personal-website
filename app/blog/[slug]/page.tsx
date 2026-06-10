@@ -51,4 +51,16 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
             year: 'numeric',
           })}
         </time>
-        <h1 className="font-barlow text-5xl font-black uppercase leading-none mt-2 mb-10"
+        <h1 className="font-barlow text-5xl font-black uppercase leading-none mt-2 mb-10">
+          {post.title}
+        </h1>
+
+        <div
+          className="blog-content"
+          dangerouslySetInnerHTML={{ __html: contentHtml }}
+        />
+      </main>
+      <Footer />
+    </div>
+  )
+}
