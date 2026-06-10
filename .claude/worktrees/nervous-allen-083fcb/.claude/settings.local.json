@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/personal-website/**)",
+      "Bash(vercel --version)",
+      "Bash(vercel whoami *)",
+      "Bash(git push *)",
+      "Bash(gh pr create --title 'mobile: hamburger menu, Hero layout improvements, CV download button & web-design-reviewer skill' --body ' *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "mcp__25c27052-c4c7-4afa-96a2-06214e69dc92__get_project",
+      "Bash(gh pr *)"
+    ]
+  }
+}

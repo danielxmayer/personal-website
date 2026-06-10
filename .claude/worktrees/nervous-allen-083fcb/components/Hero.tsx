@@ -12,11 +12,11 @@ export default function Hero() {
 
       {/* Background photo */}
       <Image
-        src="/daniel.webp"
+        src="/daniel.JPG"
         alt="Daniel Mayer"
         fill
         priority
-        className="object-cover object-[50%_20%] md:object-[50%_15%]"
+        className="object-cover object-[50%_20%] md:object-[25%_15%]"
         sizes="100vw"
       />
 
@@ -32,7 +32,7 @@ export default function Hero() {
       {/* Top bar */}
       <div className="absolute top-0 left-0 right-0 z-10 flex items-center justify-between px-8 md:px-16 pt-8">
         <span className="text-xs text-white/40 tracking-[0.25em] uppercase font-light">
-          danielmayer.space
+          danielmayer.cz
         </span>
         <span className="flex items-center gap-2 text-xs text-white/40 tracking-[0.15em] uppercase font-light">
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-400/70 animate-pulse" />
@@ -40,18 +40,21 @@ export default function Hero() {
         </span>
       </div>
 
+      {/* Daniel — top-left */}
+      <div className="absolute z-10 top-[5%] left-8 md:left-16">
+        <span className="font-barlow font-black leading-[0.88] text-[clamp(4rem,12vw,10rem)] tracking-tight text-outline-white">
+          Daniel
+        </span>
+      </div>
+
       {/* Main content — bottom, full width */}
       <div className="relative z-10 flex flex-col justify-end min-h-screen pb-12 px-8 md:px-16">
 
-        {/* Name: diagonal — Daniel vlevo nahoře, Mayer vpravo dole, obličej uprostřed */}
-        <div className="mb-8">
-          <h1 className="font-barlow font-black leading-[0.88] text-[clamp(4rem,12vw,10rem)] tracking-tight flex flex-col">
-            <span className="block text-outline-white self-start -translate-y-3 md:-translate-y-8">Daniel</span>
-            <span className="block text-outline-white self-end translate-y-1 md:translate-y-3">Mayer</span>
+        {/* Mayer — right, 15% above bottom */}
+        <div className="mb-[55vh] flex justify-end">
+          <h1 className="font-barlow font-black leading-[0.88] text-[clamp(4rem,12vw,10rem)] tracking-tight">
+            <span className="text-outline-white">Mayer</span>
           </h1>
-          <p className="text-white/45 text-xs tracking-[0.25em] uppercase font-light mt-8 text-right">
-            Mediální strategie · Řízení investic · Brand building
-          </p>
         </div>
 
         {/* Bottom bar: stats + title + CV button */}
@@ -69,6 +72,9 @@ export default function Hero() {
 
           {/* Title + CV */}
           <div className="flex flex-col items-start sm:items-end gap-3">
+            <p className="text-white/45 text-xs tracking-[0.25em] uppercase font-light">
+              Mediální strategie · Řízení investic · Brand building
+            </p>
             <p className="text-[0.65rem] text-white/60 tracking-[0.3em] uppercase font-light">
               Marketing &amp; Media Manager
             </p>
@@ -100,4 +106,10 @@ export default function Hero() {
       <style>{`
         @keyframes scrollLine {
           0%   { transform: translateY(-100%); opacity: 1; }
-          100% { transform: translateY(350%);  opa
+          100% { transform: translateY(350%);  opacity: 0; }
+        }
+      `}</style>
+
+    </section>
+  )
+}

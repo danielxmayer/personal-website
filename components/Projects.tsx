@@ -12,7 +12,7 @@ const projects = [
     company: 'TV Nova',
     period: '2022',
     description:
-      'Strategické mediální plánování pro launch nové herní platformy. Rychlý nárůst spontánní znalosti značky na úroveň původního Voyo díky přesně cíleným kampaním.',
+      'Strategické mediální plánování pro launch nové streamovací platformy. Rychlý nárůst spontánní znalosti značky na úroveň původního Voyo díky přesně cíleným kampaním.',
     tags: ['Launch', 'Media Planning', 'Awareness'],
   },
   {
@@ -47,7 +47,7 @@ export default function Projects() {
       <div className="max-w-5xl mx-auto px-8">
         <div className="grid md:grid-cols-12 gap-16 mb-16">
           <div className="md:col-span-4">
-            <p className="section-label text-xs text-gray-400 tracking-widest uppercase mb-4 font-medium">Reference</p>
+            <p className="section-label text-xs text-gray-400 tracking-widest uppercase mb-4 font-medium">Projekty</p>
             <h2 className="font-playfair text-3xl font-bold text-gray-900 leading-tight">Vybrané<br />projekty</h2>
           </div>
           <div className="md:col-span-8" />
@@ -84,5 +84,4 @@ export default function Projects() {
         </div>
       </div>
     </section>
-  )
-}
+ 

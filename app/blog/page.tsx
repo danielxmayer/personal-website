@@ -6,6 +6,13 @@ import Footer from '@/components/Footer'
 export const metadata = {
   title: 'Blog – Daniel Mayer',
   description: 'Pohled zevnitř na CZ mediální trh.',
+  openGraph: {
+    title: 'Blog – Daniel Mayer',
+    description: 'Pohled zevnitř na CZ mediální trh.',
+    type: 'website',
+    locale: 'cs_CZ',
+    siteName: 'Daniel Mayer',
+  },
 }
 
 export default function BlogPage() {
@@ -41,15 +48,4 @@ export default function BlogPage() {
               <p className="text-gray-600 leading-relaxed mb-5">{post.perex}</p>
               <Link
                 href={`/blog/${post.slug}`}
-                className="text-sm font-semibold text-gray-900 hover:text-gray-500 transition-colors"
-              >
-                Číst dál →
-              </Link>
-            </article>
-          ))}
-        </div>
-      </main>
-      <Footer />
-    </div>
-  )
-}
+                className="text-sm font-semibold text-gray-900 hover:text-gray-500 transiti

@@ -15,6 +15,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${post.title} – Daniel Mayer`,
     description: post.perex,
+    openGraph: {
+      title: `${post.title} – Daniel Mayer`,
+      description: post.perex,
+      type: 'article',
+      locale: 'cs_CZ',
+      siteName: 'Daniel Mayer',
+      publishedTime: post.date,
+    },
   }
 }
 
@@ -43,16 +51,4 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
             year: 'numeric',
           })}
         </time>
-        <h1 className="font-barlow text-5xl font-black uppercase leading-none mt-2 mb-10">
-          {post.title}
-        </h1>
-
-        <div
-          className="blog-content"
-          dangerouslySetInnerHTML={{ __html: contentHtml }}
-        />
-      </main>
-      <Footer />
-    </div>
-  )
-}
+        <h1 className="font-barlow text-5xl font-black uppercase leading-none mt-2 mb-10"
