@@ -64,7 +64,7 @@ export default function Projects() {
               <div className="md:col-span-4">
                 <p className="text-xs text-gray-400 font-medium mb-1">{project.period}</p>
                 <h3 className="text-base font-semibold text-gray-900 mb-1 group-hover:text-gray-700 transition-colors">{project.title}</h3>
-                <p className="text-sm text-gray-400">{project.company}</p>
+                <p className="text-sm text-gray-500">{project.company}</p>
               </div>
               <div className="md:col-span-8">
                 <p className="text-sm text-gray-500 leading-relaxed mb-4">{project.description}</p>
@@ -72,7 +72,7 @@ export default function Projects() {
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-2.5 py-1 bg-gray-50 text-gray-400 text-xs rounded-full font-medium border border-gray-100"
+                      className="px-2.5 py-1 bg-gray-50 text-gray-500 text-xs rounded-full font-medium border border-gray-100"
                     >
                       {tag}
                     </span>

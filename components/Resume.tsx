@@ -88,7 +88,7 @@ export default function Resume() {
                   <p className="text-xs text-gray-400 font-medium mb-1">{item.period}</p>
                   <h4 className="text-base font-semibold text-gray-900">{item.role}</h4>
                   <p className="text-sm text-gray-500 mb-2">{item.company}</p>
-                  <p className="text-sm text-gray-400 leading-relaxed">{item.description}</p>
+                  <p className="text-sm text-gray-500 leading-relaxed">{item.description}</p>
                 </div>
               </div>
             ))}
@@ -110,7 +110,7 @@ export default function Resume() {
                   <p className="text-xs text-gray-400 font-medium mb-1">{item.period}</p>
                   <h4 className="text-base font-semibold text-gray-900">{item.degree}</h4>
                   <p className="text-sm text-gray-500 mb-2">{item.school}</p>
-                  <p className="text-sm text-gray-400 leading-relaxed">{item.description}</p>
+                  <p className="text-sm text-gray-500 leading-relaxed">{item.description}</p>
                 </div>
               </div>
             ))}
@@ -127,7 +127,7 @@ export default function Resume() {
               {achievements.map((item) => (
                 <div key={item.title} className="bg-white rounded-2xl p-5 border border-gray-100 hover:border-gray-200 hover:shadow-sm transition-all">
                   <p className="text-sm font-semibold text-gray-900 mb-2">{item.title}</p>
-                  <p className="text-sm text-gray-400 leading-relaxed">{item.description}</p>
+                  <p className="text-sm text-gray-500 leading-relaxed">{item.description}</p>
                 </div>
               ))}
             </div>

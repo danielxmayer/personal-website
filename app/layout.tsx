@@ -3,14 +3,33 @@ import Script from 'next/script'
 import '../styles/globals.css'
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.danielmayer.space'),
   title: 'Daniel Mayer – Marketing & Media Manager',
   description: 'Marketingový a mediální manažer s více než 10 lety praxe. TV Nova, Zonky, MAFRA.',
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     title: 'Daniel Mayer – Marketing & Media Manager',
     description: 'Marketingový a mediální manažer s více než 10 lety praxe. TV Nova, Zonky, MAFRA.',
+    url: '/',
     type: 'website',
     locale: 'cs_CZ',
     siteName: 'Daniel Mayer',
+    images: [
+      {
+        url: '/og.png',
+        width: 1200,
+        height: 630,
+        alt: 'Daniel Mayer – Marketing & Media Manager',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Daniel Mayer – Marketing & Media Manager',
+    description: 'Marketingový a mediální manažer s více než 10 lety praxe. TV Nova, Zonky, MAFRA.',
+    images: ['/og.png'],
   },
 }
 

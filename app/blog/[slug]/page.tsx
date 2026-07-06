@@ -15,13 +15,24 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${post.title} – Daniel Mayer`,
     description: post.perex,
+    alternates: {
+      canonical: `/blog/${slug}`,
+    },
     openGraph: {
       title: `${post.title} – Daniel Mayer`,
       description: post.perex,
+      url: `/blog/${slug}`,
       type: 'article',
       locale: 'cs_CZ',
       siteName: 'Daniel Mayer',
       publishedTime: post.date,
+      images: ['/og.png'],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${post.title} – Daniel Mayer`,
+      description: post.perex,
+      images: ['/og.png'],
     },
   }
 }

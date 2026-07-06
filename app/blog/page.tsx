@@ -6,12 +6,23 @@ import Footer from '@/components/Footer'
 export const metadata = {
   title: 'Blog – Daniel Mayer',
   description: 'Pohled zevnitř na CZ mediální trh.',
+  alternates: {
+    canonical: '/blog',
+  },
   openGraph: {
     title: 'Blog – Daniel Mayer',
     description: 'Pohled zevnitř na CZ mediální trh.',
+    url: '/blog',
     type: 'website',
     locale: 'cs_CZ',
     siteName: 'Daniel Mayer',
+    images: ['/og.png'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Blog – Daniel Mayer',
+    description: 'Pohled zevnitř na CZ mediální trh.',
+    images: ['/og.png'],
   },
 }
 
