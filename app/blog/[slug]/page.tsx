@@ -62,9 +62,20 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
             year: 'numeric',
           })}
         </time>
-        <h1 className="font-barlow text-5xl font-black uppercase leading-none mt-2 mb-10">
+        <h1 className="font-barlow text-5xl font-black uppercase leading-none mt-2 mb-8">
           {post.title}
         </h1>
+
+        {post.coverImage && (
+          <>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={post.coverImage}
+              alt={post.title}
+              className="w-full rounded-xl border border-gray-200 mb-10"
+            />
+          </>
+        )}
 
         <div
           className="blog-content"

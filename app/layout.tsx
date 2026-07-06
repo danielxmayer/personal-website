@@ -33,6 +33,29 @@ export const metadata: Metadata = {
   },
 }
 
+const personJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Daniel Mayer',
+  url: 'https://www.danielmayer.space',
+  image: 'https://www.danielmayer.space/og.png',
+  jobTitle: 'Marketing & Media Manager',
+  description:
+    'Marketingový a mediální manažer s více než 10 lety praxe v řízení marketingových investic a mediálních strategií.',
+  alumniOf: [
+    { '@type': 'CollegeOrUniversity', name: 'Česká zemědělská univerzita v Praze' },
+    { '@type': 'CollegeOrUniversity', name: 'Humboldt-Universität zu Berlin' },
+  ],
+  knowsAbout: [
+    'Mediální strategie',
+    'Plánování a nákup médií',
+    'Brand building',
+    'Výkonový marketing',
+    'Řízení marketingových investic',
+  ],
+  sameAs: ['https://www.linkedin.com/in/dama'],
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -41,6 +64,10 @@ export default function RootLayout({
   return (
     <html lang="cs">
       <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link

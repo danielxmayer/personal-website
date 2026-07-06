@@ -65,19 +65,31 @@ export default function HomeClient({ recentPosts }: Props) {
                 <Link
                   key={post.slug}
                   href={`/blog/${post.slug}`}
-                  className="group block p-7 bg-[#f9f8f6] rounded-xl border border-gray-200 hover:border-gray-400 transition-all"
+                  className="group block bg-[#f9f8f6] rounded-xl border border-gray-200 hover:border-gray-400 transition-all overflow-hidden"
                 >
-                  <time className="text-xs font-semibold uppercase tracking-widest text-gray-400 block mb-3">
-                    {new Date(post.date).toLocaleDateString('cs-CZ', {
-                      day: 'numeric',
-                      month: 'long',
-                      year: 'numeric',
-                    })}
-                  </time>
-                  <h3 className="text-xl font-bold mb-2 group-hover:text-gray-500 transition-colors leading-snug">
-                    {post.title}
-                  </h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">{post.perex}</p>
+                  {post.coverImage && (
+                    <div className="overflow-hidden">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={post.coverImage}
+                        alt={post.title}
+                        className="w-full aspect-[16/9] object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                      />
+                    </div>
+                  )}
+                  <div className="p-7">
+                    <time className="text-xs font-semibold uppercase tracking-widest text-gray-400 block mb-3">
+                      {new Date(post.date).toLocaleDateString('cs-CZ', {
+                        day: 'numeric',
+                        month: 'long',
+                        year: 'numeric',
+                      })}
+                    </time>
+                    <h3 className="text-xl font-bold mb-2 group-hover:text-gray-500 transition-colors leading-snug">
+                      {post.title}
+                    </h3>
+                    <p className="text-gray-500 text-sm leading-relaxed">{post.perex}</p>
+                  </div>
                 </Link>
               ))}
             </div>

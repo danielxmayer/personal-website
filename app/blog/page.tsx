@@ -44,6 +44,19 @@ export default function BlogPage() {
         <div className="space-y-12">
           {posts.map((post) => (
             <article key={post.slug} className="border-b border-gray-200 pb-12">
+              {post.coverImage && (
+                <Link
+                  href={`/blog/${post.slug}`}
+                  className="block mb-6 overflow-hidden rounded-xl border border-gray-200"
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={post.coverImage}
+                    alt={post.title}
+                    className="w-full aspect-[16/9] object-cover transition-transform duration-500 hover:scale-[1.02]"
+                  />
+                </Link>
+              )}
               <time className="text-xs font-semibold uppercase tracking-widest text-gray-400">
                 {new Date(post.date).toLocaleDateString('cs-CZ', {
                   day: 'numeric',
