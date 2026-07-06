@@ -16,25 +16,28 @@ export default function Contact() {
           <div className="md:col-span-7 space-y-3">
             <a
               href="tel:+420605349888"
+              aria-label="Zavolat na +420 605 349 888"
               className="group flex items-center gap-4 p-5 bg-white border border-gray-100 rounded-2xl hover:border-gray-300 transition-colors"
             >
-              <span className="w-10 h-10 flex items-center justify-center bg-stone-50 border border-gray-200 rounded-full text-sm">✆</span>
+              <span aria-hidden="true" className="w-10 h-10 flex items-center justify-center bg-stone-50 border border-gray-200 rounded-full text-sm">✆</span>
               <span className="text-sm text-gray-700 group-hover:text-gray-900 transition-colors">+420 605 349 888</span>
             </a>
             <a
               href="mailto:daniel.mayer@seznam.cz"
+              aria-label="Napsat e-mail na daniel.mayer@seznam.cz"
               className="group flex items-center gap-4 p-5 bg-white border border-gray-100 rounded-2xl hover:border-gray-300 transition-colors"
             >
-              <span className="w-10 h-10 flex items-center justify-center bg-stone-50 border border-gray-200 rounded-full text-sm">✉</span>
+              <span aria-hidden="true" className="w-10 h-10 flex items-center justify-center bg-stone-50 border border-gray-200 rounded-full text-sm">✉</span>
               <span className="text-sm text-gray-700 group-hover:text-gray-900 transition-colors">daniel.mayer@seznam.cz</span>
             </a>
             <a
               href="https://www.linkedin.com/in/dama"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="LinkedIn profil Daniela Mayera (otevře se v novém okně)"
               className="group flex items-center gap-4 p-5 bg-white border border-gray-100 rounded-2xl hover:border-gray-300 transition-colors"
             >
-              <span className="w-10 h-10 flex items-center justify-center bg-stone-50 border border-gray-200 rounded-full text-sm">💼</span>
+              <span aria-hidden="true" className="w-10 h-10 flex items-center justify-center bg-stone-50 border border-gray-200 rounded-full text-sm">💼</span>
               <span className="text-sm text-gray-700 group-hover:text-gray-900 transition-colors">linkedin.com/in/dama</span>
             </a>
           </div>

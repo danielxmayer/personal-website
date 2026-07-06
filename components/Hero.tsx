@@ -67,21 +67,32 @@ export default function Hero() {
             ))}
           </div>
 
-          {/* Title + CV */}
+          {/* Title + CTAs */}
           <div className="flex flex-col items-start sm:items-end gap-3">
             <p className="text-[0.65rem] text-white/60 tracking-[0.3em] uppercase font-light">
               Marketing &amp; Media Manager
             </p>
-            <a
-              href="/Daniel_Mayer_CV_2026.pdf"
-              download
-              className="inline-flex items-center gap-2 px-5 py-2.5 min-h-[44px] rounded-full border border-white/30 text-white/80 text-xs tracking-[0.15em] uppercase font-medium hover:bg-white hover:text-gray-900 transition-all duration-300"
-            >
-              Stáhnout CV
-              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3" />
-              </svg>
-            </a>
+            <div className="flex items-center gap-3">
+              <a
+                href="#contact"
+                className="inline-flex items-center gap-2 px-5 py-2.5 min-h-[44px] rounded-full bg-white text-gray-900 text-xs tracking-[0.15em] uppercase font-semibold hover:bg-white/85 transition-all duration-300"
+              >
+                Napište mi
+                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </a>
+              <a
+                href="/Daniel_Mayer_CV_2026.pdf"
+                download
+                className="inline-flex items-center gap-2 px-5 py-2.5 min-h-[44px] rounded-full border border-white/30 text-white/80 text-xs tracking-[0.15em] uppercase font-medium hover:bg-white hover:text-gray-900 transition-all duration-300"
+              >
+                Stáhnout CV
+                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3" />
+                </svg>
+              </a>
+            </div>
           </div>
 
         </div>
