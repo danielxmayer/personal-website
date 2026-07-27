@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Script from 'next/script'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import '../styles/globals.css'
 
 export const metadata: Metadata = {
@@ -77,6 +78,7 @@ export default function RootLayout({
       </head>
       <body>
         {children}
+        <SpeedInsights />
 
         <Script
           id="hubspot-tracking"
