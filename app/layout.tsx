@@ -83,6 +83,19 @@ export default function RootLayout({
           src="https://js-eu1.hs-scripts.com/148454998.js"
           strategy="afterInteractive"
         />
+
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-J09FMYESTV"
+          strategy="afterInteractive"
+        />
+        <Script id="ga4" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-J09FMYESTV');
+          `}
+        </Script>
       </body>
     </html>
   )
