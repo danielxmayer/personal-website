@@ -68,6 +68,12 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
         />
+        {/* HubSpot: nacitat tracking, ale nezobrazovat chat widget */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.hsConversationsSettings = { loadImmediately: false };`,
+          }}
+        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
