@@ -7,11 +7,11 @@ const experience = [
       'Řízení ročního marketingového rozpočtu – plánování, alokace a optimalizace. Spoluvytváření a implementace mediální strategie napříč TV, digital a OOH. Nastavení finančního reportingu a analytiky marketingových investic. Procurement – výběr a vyjednávání s dodavateli, smlouvy a kontrola plnění. Vedení týmu pro mediální partnerství a barterové spolupráce napříč klíčovými akcemi.',
   },
   {
-    role: 'Media Manager',
+    role: 'Marketing Manager',
     company: 'Zonky',
     period: '2017 – 2021 · Praha',
     description:
-      'Vytváření a řízení mediálních plánů napříč TV, tiskem, rozhlasem a online kanály. Analýza mediálního a nákupního chování cílových skupin. Implementace a optimalizace kampaní podle výkonu. Odpovědnost za přidělenou část ATL marketingového rozpočtu a správa smluv a faktur.',
+      'Vytvoření a vedení mediální strategie pro fintech značku od start-upu po etablovaného hráče na trhu. Odpovědnost za přidělenou část ATL rozpočtu a jeho optimalizace na základě výkonnostních dat. Plánování a realizace kampaní online i offline (TV, tisk, rádio, digitál) u produktu s dlouhým rozhodovacím cyklem. Analýza mediální konzumace a nákupního chování cílových skupin a převod insightů do strategie. Správa obchodních smluv, objednávek a faktur v objemu odpovídajícím ročnímu mediálnímu plánu.',
   },
   {
     role: 'Media Manager',
